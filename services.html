@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services | Terra's World Landscaping</title>
+  <meta name="description" content="From terrace gardens to farm design, explore Terra's World complete range of botanical landscaping services.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { cream:'#F5F3EF', dark:'#1A1A18', lime:'#C4F532', pastel:{ sage:'#D0DEC4', khaki:'#E9E4CE', blush:'#F3DADB', sky:'#C9E1E4' } }, fontFamily:{ sans:['DM Sans','sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional styles for expanded content */
+    .bento-card-content-expanded {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-height: 0;
+      overflow: hidden;
+    }
+    .bento-card:hover .bento-card-content-expanded {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 150px;
+    }
+    .bento-overlay {
+      transition: background 0.3s ease, padding-bottom 0.3s ease;
+    }
+    .bento-card:hover .bento-overlay {
+      background: linear-gradient(to top, rgba(26,26,24,0.95), rgba(26,26,24,0.4), transparent);
+      padding-bottom: 2rem;
+    }
+  </style>
+</head>
+<body class="bg-cream text-dark overflow-x-hidden">
+
+  <!-- ── NAVBAR ── -->
+  <nav id="main-nav" class="nav-glass fixed top-0 left-0 right-0 z-50 h-20 flex items-center px-6 md:px-10">
+    <div class="max-w-[1200px] mx-auto w-full flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-lg tracking-tight text-dark">
+        <i data-lucide="leaf" style="color:#166534;width:20px;height:20px;"></i> Terra's World
+      </a>
+      <div class="hidden md:flex items-center gap-2">
+        <a href="services.html" class="pill-nav active">Services</a>
+        <a href="projects.html" class="pill-nav">Projects</a>
+        <a href="about.html"    class="pill-nav">About</a>
+        <a href="blog.html"     class="pill-nav">Blog</a>
+        <a href="contact.html"  class="btn-cta ml-2">Start Project</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-dark"><i data-lucide="menu"></i></button>
+    </div>
+  </nav>
+  <div id="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="min-h-[100svh] flex flex-col justify-center page-hero bg-dark py-12">
+    <div class="page-hero-inner text-white max-w-[1200px] mx-auto">
+      <div class="reveal-up md:w-3/4">
+        <span class="page-hero-label" style="color:rgba(255,255,255,.5);border-color:rgba(255,255,255,.15);">What we do</span>
+        <h1 style="color:#fff;" class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] my-6">
+          Horticulture meets<br>human-centric design.
+        </h1>
+        <p class="sub text-lg md:text-xl" style="color:rgba(255,255,255,.65); max-w: 600px;">
+          We transcend traditional gardening by offering end-to-end botanical solutions. From intimate balcony retreats to sprawling commercial landscapes, we engineer ecosystems that are visually stunning, ecologically balanced, and built to thrive through changing seasons.
+        </p>
+      </div>
+    </div>
+    <!-- Decorative strip -->
+    <div class="marquee-wrap border-t border-white/10 py-4 mt-8">
+      <div class="marquee-track text-lg font-medium uppercase tracking-widest text-white/30">
+        <span>Farm Design</span><span class="text-lime mx-4">◆</span>
+        <span>Theme Gardens</span><span class="text-lime mx-4">◆</span>
+        <span>Terrace Gardens</span><span class="text-lime mx-4">◆</span>
+        <span>Balcony Gardens</span><span class="text-lime mx-4">◆</span>
+        <span>Indoor Plants</span><span class="text-lime mx-4">◆</span>
+        <span>Hardscaping</span><span class="text-lime mx-4">◆</span>
+        <span>Maintenance</span><span class="text-lime mx-4">◆</span>
+        <span>Lawn Gardens</span><span class="text-lime mx-4">◆</span>
+        <span>Farm Design</span><span class="text-lime mx-4">◆</span>
+        <span>Theme Gardens</span><span class="text-lime mx-4">◆</span>
+        <span>Terrace Gardens</span><span class="text-lime mx-4">◆</span>
+        <span>Balcony Gardens</span><span class="text-lime mx-4">◆</span>
+        <span>Indoor Plants</span><span class="text-lime mx-4">◆</span>
+        <span>Hardscaping</span><span class="text-lime mx-4">◆</span>
+        <span>Maintenance</span><span class="text-lime mx-4">◆</span>
+        <span>Lawn Gardens</span><span class="text-lime mx-4">◆</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES BENTO GRID ── -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10  py-12">
+    <div class="mb-14 reveal-up flex flex-col md:flex-row md:items-end justify-between gap-6">
+      <div>
+        <span class="section-label">Our Capabilities</span>
+        <h2 class="section-heading mt-2">Nine ways we transform<br>your environment.</h2>
+      </div>
+      <p class="text-dark/60 max-w-sm md:text-right">Each service is tailored to the microclimate of your site, ensuring longevity and minimal environmental impact.</p>
+    </div>
+
+    <!-- Bento grid: row 1 — 2 tall + 1 wide -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-[14px] reveal-stagger">
+
+      <!-- Farm Design — tall -->
+      <div class="bento-card row-span-2 h-[480px] md:h-auto md:min-h-[480px]">
+        <img src="assets/office_plants.png" alt="Farm Design">
+        <div class="bento-overlay">
+          <span class="bento-tag">Farm Design</span>
+          <h3 class="bento-title">Productive & Beautiful Farms</h3>
+          <p class="bento-sub">Custom layouts that merge agricultural productivity with staggering landscape beauty.</p>
+          <div class="bento-card-content-expanded">
+            <ul class="list-disc ml-4 space-y-1">
+              <li>Soil quality assessment & regeneration</li>
+              <li>Organic kitchen gardens & orchards</li>
+              <li>Irrigation flow & rainwater harvesting</li>
+              <li>Crop rotation planning for year-round yield</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Farmhouse Design -->
+      <div class="bento-card h-[240px]">
+        <img src="assets/home_plants.png" alt="Farmhouse">
+        <div class="bento-overlay">
+          <span class="bento-tag">Farmhouse Design</span>
+          <h3 class="bento-title">Crafted Farmhouse Landscapes</h3>
+          <div class="bento-card-content-expanded">
+            Seamlessly extending your living areas outdoors. We create fire-pit zones, outdoor kitchens, and sprawling entertaining spaces framed by native flora.
+          </div>
+        </div>
+      </div>
+
+      <!-- Theme Gardens -->
+      <div class="bento-card h-[240px]">
+        <img src="assets/restaurant_plants.png" alt="Theme Garden">
+        <div class="bento-overlay">
+          <span class="bento-tag">Theme Gardens</span>
+          <h3 class="bento-title">Zen, Tropical, Cottage & More</h3>
+          <div class="bento-card-content-expanded">
+            Carefully curated spaces designed around a specific aesthetic or philosophy, using authentic materials and geographically appropriate plant palettes.
+          </div>
+        </div>
+      </div>
+
+      <!-- Terrace -->
+      <div class="bento-card h-[240px]">
+        <img src="assets/media_.png" alt="Terrace">
+        <div class="bento-overlay">
+          <span class="bento-tag">Terrace Gardens</span>
+          <h3 class="bento-title">Sky-high Green Retreats</h3>
+          <div class="bento-card-content-expanded">
+            Wind-resistant, weight-conscious rooftop designs featuring pergolas, weather-proof decking, and lush container planting for urban escapes.
+          </div>
+        </div>
+      </div>
+
+      <!-- Balcony -->
+      <div class="bento-card h-[240px]">
+        <img src="assets/indoor_arrangement.png" alt="Balcony">
+        <div class="bento-overlay">
+          <span class="bento-tag">Balcony Gardens</span>
+          <h3 class="bento-title">Small Space, Big Impact</h3>
+          <div class="bento-card-content-expanded">
+            Maximizing verticality in compact areas. We utilize smart planters, hanging vines, and dwarf species to create a pocket of calm outside your window.
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end row-1 -->
+
+    <!-- Row 2 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-[14px] mt-[14px] reveal-stagger">
+
+      <!-- Maintenance — wide -->
+      <div class="bento-card md:col-span-2 h-[280px]">
+        <img src="assets/terrace_garden.png" alt="Maintenance">
+        <div class="bento-overlay">
+          <span class="bento-tag">Ongoing Care</span>
+          <h3 class="bento-title">Comprehensive Maintenance</h3>
+          <p class="bento-sub">We don't just build your garden; we ensure it thrives over the years.</p>
+          <div class="bento-card-content-expanded">
+            Our horticulturalists provide weekly or monthly visits for pruning, organic pest management, fertilizer application, and soil aeration. We actively monitor plant health so your landscape improves with age rather than degrades.
+          </div>
+        </div>
+      </div>
+
+      <!-- Hardscaping -->
+      <div class="bento-card h-[280px]">
+        <img src="assets/hero_garden.png" alt="Hardscaping">
+        <div class="bento-overlay">
+          <span class="bento-tag">Hardscaping</span>
+          <h3 class="bento-title">Pathways, Walls & Structures</h3>
+          <div class="bento-card-content-expanded">
+            The bones of the garden. We design and install natural stone paving, retaining walls, bespoke water features, and ambient pathway lighting.
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end row-2 -->
+
+    <!-- Row 3 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-[14px] mt-[14px] reveal-stagger">
+
+      <!-- Indoor Plants -->
+      <div class="bento-card h-[280px]">
+        <img src="assets/office_plants.png" alt="Indoor">
+        <div class="bento-overlay">
+          <span class="bento-tag">Indoor Biophilia</span>
+          <h3 class="bento-title">Interior Plantscapes</h3>
+          <div class="bento-card-content-expanded">
+            Improving air quality and mood inside homes and corporate offices through living walls, large specimen trees, and low-light adaptable species.
+          </div>
+        </div>
+      </div>
+
+      <!-- Lawn Gardens — wide -->
+      <div class="bento-card md:col-span-2 h-[280px]">
+        <img src="assets/home_plants.png" alt="Lawn">
+        <div class="bento-overlay">
+          <span class="bento-tag">Lawn & Turf</span>
+          <h3 class="bento-title">Lush, Manicured Outdoor Canvases</h3>
+          <p class="bento-sub">Precision grading, turf laying, and ornamental border design.</p>
+          <div class="bento-card-content-expanded">
+            Beyond traditional grass, we specialize in drought-resistant micro-clover, native meadow blends, and automated sprinkler systems that drastically reduce water consumption while maintaining a vibrant green look.
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end row-3 -->
+  </section>
+
+  <!-- ── PROCESS / WORKFLOW ── -->
+  <section class="min-h-[100svh] flex flex-col justify-center bg-white  border-y border-dark/5 py-12">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10">
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <!-- Left sticky heading -->
+        <div class="sticky top-32">
+          <span class="section-label reveal-up">Our Methodology</span>
+          <h2 class="section-heading reveal-up mt-2">From first call<br>to final bloom.</h2>
+          <p class="section-sub mt-4 reveal-up max-w-md">Our six-step process removes the guesswork from landscaping. We ensure every project is thoughtfully designed, transparently priced, cleanly executed, and lovingly maintained.</p>
+          
+          <div class="mt-8 p-6 bg-pastel-khaki rounded-[20px] reveal-up max-w-md">
+            <h4 class="font-semibold text-dark mb-2">Why our process works</h4>
+            <p class="text-sm text-dark/70 leading-relaxed 1mb-4">By separating design from installation, we give you full control. You see exactly what you’re getting via 3D renders before a single shovel hits the dirt.</p>
+            <div class="mt-4">
+               <a href="contact.html" class="font-medium text-dark flex items-center gap-2 hover:text-lime-700 transition">Start your journey <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right process steps -->
+        <div class="reveal-stagger mt-10 md:mt-0 relative">
+          <!-- Connecting line for desktop -->
+          <div class="hidden md:block absolute left-[28px] top-8 bottom-12 w-px bg-dark/10 -z-10"></div>
+          
+          <div class="process-step relative bg-cream rounded-[24px] p-8 mb-6 border border-dark/5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="step-num w-14 h-14 rounded-full bg-dark text-lime flex items-center justify-center font-bold text-xl shrink-0">01</span>
+              <h3 class="text-xl font-semibold">Discovery & Vision</h3>
+            </div>
+            <p class="text-sm text-dark/70 leading-relaxed ml-18 pl-[72px]">We begin with a thorough 45-minute consultation to understand your aesthetic preferences, lifestyle needs, budget framework, and long-term goals for the space.</p>
+          </div>
+          
+          <div class="process-step relative bg-cream rounded-[24px] p-8 mb-6 border border-dark/5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="step-num w-14 h-14 rounded-full bg-pastel-sage text-dark flex items-center justify-center font-bold text-xl shrink-0">02</span>
+              <h3 class="text-xl font-semibold">Site Survey & Science</h3>
+            </div>
+            <p class="text-sm text-dark/70 leading-relaxed pl-[72px]">Our engineers visit your site to analyze the microclimate. We test soil pH and drainage, map sun trajectories, check wind exposure, and locate utility lines to inform our botanical choices.</p>
+          </div>
+          
+          <div class="process-step relative bg-cream rounded-[24px] p-8 mb-6 border border-dark/5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="step-num w-14 h-14 rounded-full bg-pastel-sky text-dark flex items-center justify-center font-bold text-xl shrink-0">03</span>
+              <h3 class="text-xl font-semibold">Master Concept Design</h3>
+            </div>
+            <p class="text-sm text-dark/70 leading-relaxed pl-[72px]">You receive a comprehensive design package including a high-resolution mood board, a specific plant species palette, 2D layout blueprints, and immersive 3D visualizations of the finished space.</p>
+          </div>
+          
+          <div class="process-step relative bg-cream rounded-[24px] p-8 mb-6 border border-dark/5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="step-num w-14 h-14 rounded-full bg-pastel-blush text-dark flex items-center justify-center font-bold text-xl shrink-0">04</span>
+              <h3 class="text-xl font-semibold">Procurement</h3>
+            </div>
+            <p class="text-sm text-dark/70 leading-relaxed pl-[72px]">Upon approval, we hand-select premium specimens from our network of ethical nurseries. We source high-grade soil mixes, organic fertilizers, and custom fabricated planters specific to your design.</p>
+          </div>
+          
+          <div class="process-step relative bg-cream rounded-[24px] p-8 mb-6 border border-dark/5 shadow-sm hover:shadow-md transition-shadow">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="step-num w-14 h-14 rounded-full bg-pastel-khaki text-dark flex items-center justify-center font-bold text-xl shrink-0">05</span>
+              <h3 class="text-xl font-semibold">Clean Installation</h3>
+            </div>
+            <p class="text-sm text-dark/70 leading-relaxed pl-[72px]">Our landscaping crews execute the build with military precision. We handle everything from hardscaping drops to irrigation plumbing, ensuring your property is left spotless after planting.</p>
+          </div>
+          
+          <div class="process-step relative bg-dark text-white rounded-[24px] p-8 mt-8 shadow-xl">
+             <div class="flex items-center gap-4 mb-4">
+              <span class="step-num w-14 h-14 rounded-full bg-lime text-dark flex items-center justify-center font-bold text-xl shrink-0">06</span>
+              <h3 class="text-xl font-semibold">Aftercare & Growth</h3>
+            </div>
+            <p class="text-sm text-white/70 leading-relaxed pl-[72px]">A landscape is alive; it requires stewardship. We provide a 30-day establishment guarantee and offer ongoing, seasonal maintenance contracts to protect your investment as the garden matures.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TESTIMONIAL / WHY US ── -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10  reveal-up py-12">
+    <div class="bg-pastel-sage rounded-[32px] p-8 md:p-16 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden">
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-white/30 rounded-full blur-3xl rounded-full mix-blend-overlay"></div>
+      
+      <div class="md:w-1/3 shrink-0">
+         <img src="assets/restaurant_plants.png" class="w-48 h-48 md:w-full md:h-80 object-cover rounded-[20px] shadow-lg" alt="Client Testimonial">
+      </div>
+      <div class="md:w-2/3">
+        <svg class="w-12 h-12 text-dark/20 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+        <h3 class="text-2xl md:text-3xl font-semibold leading-snug mb-6 text-dark tracking-tight">
+          "Terra's World didn't just give us a beautiful terrace; they transformed how we use our home. The attention to detail in the irrigation system and the choice of native plants meant we spend our time enjoying the space, not stressing over maintenance."
+        </h3>
+        <div>
+          <p class="font-bold text-dark">Rohan & Maya Desai</p>
+          <p class="text-sm text-dark/70">Residential Terrace Project, South Mumbai</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICE FAQS ── -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[800px] mx-auto px-6 md:px-10  py-12">
+    <div class="text-center mb-12 reveal-up">
+      <span class="section-label justify-center">Service FAQs</span>
+      <h2 class="section-heading mt-2">Questions about working together?</h2>
+    </div>
+    
+    <div class="flex flex-col gap-4 reveal-stagger">
+      <!-- FAQ 1 -->
+      <div class="faq-item bg-white border border-dark/10 rounded-[14px] overflow-hidden cursor-pointer hover:border-dark/30 transition-colors">
+        <button class="faq-q flex justify-between items-center w-full text-left p-6 font-semibold text-lg" onclick="toggleFaq(this)">
+          Do you handle approvals for apartment balcony changes?
+          <i data-lucide="plus" style="width:20px;height:20px;flex-shrink:0;"></i>
+        </button>
+        <div class="faq-a hidden px-6 pb-6 text-base text-dark/70 leading-relaxed">While the client is ultimately responsible for societal approvals, we provide full structural weight calculations, waterproof membrane certifications, and detailed plans that easily pass most Homeowner Association (HOA) community guidelines.</div>
+      </div>
+      <!-- FAQ 2 -->
+      <div class="faq-item bg-white border border-dark/10 rounded-[14px] overflow-hidden cursor-pointer hover:border-dark/30 transition-colors">
+        <button class="faq-q flex justify-between items-center w-full text-left p-6 font-semibold text-lg" onclick="toggleFaq(this)">
+          Can you rescue a garden that was poorly installed by someone else?
+          <i data-lucide="plus" style="width:20px;height:20px;flex-shrink:0;"></i>
+        </button>
+        <div class="faq-a hidden px-6 pb-6 text-base text-dark/70 leading-relaxed">Absolutely. We offer an "Audit & Rescue" service where we diagnose failing plants, fix faulty irrigation/drainage, remediate diseased soil, and propose a revitalization plan to save existing mature plants while redesigning the space.</div>
+      </div>
+      <!-- FAQ 3 -->
+      <div class="faq-item bg-white border border-dark/10 rounded-[14px] overflow-hidden cursor-pointer hover:border-dark/30 transition-colors">
+        <button class="faq-q flex justify-between items-center w-full text-left p-6 font-semibold text-lg" onclick="toggleFaq(this)">
+          What size projects do you take on?
+          <i data-lucide="plus" style="width:20px;height:20px;flex-shrink:0;"></i>
+        </button>
+        <div class="faq-a hidden px-6 pb-6 text-base text-dark/70 leading-relaxed">Our projects range from 150 sq.ft ultra-premium balcony gardens in city centers to massive 5-acre farmhouse developments. We have dedicated teams for micro-landscaping and large-scale agricultural design.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10  py-12">
+    <div class="bg-dark rounded-[32px] p-12 md:p-20 text-center flex flex-col items-center relative overflow-hidden reveal-up">
+      <div class="absolute inset-0 opacity-20">
+         <img src="assets/media_.png" class="w-full h-full object-cover">
+      </div>
+      <div class="relative z-10 max-w-2xl">
+        <h2 class="text-4xl md:text-5xl font-semibold text-white mb-6">Ready to transform your space?</h2>
+        <p class="text-white/70 text-lg mb-10">Tell us about your property, your vision, and your timeline. We'll put together a tailored site-visit proposal within 48 hours.</p>
+        <a href="contact.html" class="btn-cta text-base px-8 py-4 inline-flex items-center gap-2">
+          Start your project <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="bg-dark text-white pt-20 pb-10 rounded-t-[32px] px-6 md:px-10 relative overflow-hidden">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/10 pb-12">
+        <div class="col-span-2">
+          <a href="index.html" class="flex items-center gap-2 font-semibold text-xl mb-3 text-white">
+            <i data-lucide="leaf" class="text-lime w-5 h-5"></i> Terra's World
+          </a>
+          <p class="text-white/50 text-sm max-w-xs">Crafting premium botanical ecosystems for homes, offices, and commercial spaces.</p>
+        </div>
+        <div>
+          <h5 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-5">Pages</h5>
+          <ul class="flex flex-col gap-2.5 text-sm text-white/70">
+            <li><a href="services.html" class="hover:text-lime transition-colors">Services</a></li>
+            <li><a href="projects.html" class="hover:text-lime transition-colors">Projects</a></li>
+            <li><a href="about.html"    class="hover:text-lime transition-colors">About</a></li>
+            <li><a href="blog.html"     class="hover:text-lime transition-colors">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-5">Contact</h5>
+          <ul class="flex flex-col gap-2.5 text-sm text-white/70">
+            <li>hello@terrasworld.com</li>
+            <li>+1 (234) 567-8900</li>
+            <li>124 Botanical Ave, NY</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-xs text-white/30 pt-8">© 2026 Terra's World. All rights reserved.</p>
+    </div>
+    <div class="footer-blob w-[600px] h-[600px] -bottom-1/2 -right-1/4"></div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="shared.js"></script>
+  <script>
+    // FAQ toggle for services page
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const icon   = btn.querySelector('.lucide');
+      
+      // We look for .lucide because lucide replaces the element, so btn.querySelector('[data-lucide]') might be gone or class might be different. 
+      // Actually, lucide creates <svg class="lucide lucide-plus">...
+      const isOpen = !answer.classList.contains('hidden');
+      
+      // Close others loosely
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.add('hidden'));
+      document.querySelectorAll('.faq-q svg.lucide').forEach(i => { 
+            i.classList.remove('lucide-minus');
+            i.classList.add('lucide-plus');
+            i.innerHTML = '<path d="M5 12h14"/><path d="M12 5v14"/>';
+      });
+      
+      if (!isOpen) {
+        answer.classList.remove('hidden');
+        const svg = btn.querySelector('svg.lucide');
+        if(svg) {
+            svg.classList.remove('lucide-plus');
+            svg.classList.add('lucide-minus');
+            svg.innerHTML = '<path d="M5 12h14"/>';
+        }
+        gsap.from(answer, { height: 0, opacity: 0, duration: 0.3, ease: 'power2.out' });
+      }
+    }
+  </script>
+</body>
+</html>

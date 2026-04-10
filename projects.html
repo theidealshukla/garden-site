@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Terra's World</title>
+  <meta name="description" content="Browse Terra's World portfolio — a visual showcase of premium botanical landscapes across residential, commercial, and hospitality spaces.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { cream:'#F5F3EF', dark:'#1A1A18', lime:'#C4F532', pastel:{ sage:'#D0DEC4', khaki:'#E9E4CE', blush:'#F3DADB', sky:'#C9E1E4' } }, fontFamily:{ sans:['DM Sans','sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .filter-btn { border: 1px solid rgba(26,26,24,.14); border-radius:999px; padding:.4rem 1.1rem; font-size:.8rem; font-weight:600; cursor:pointer; transition: background .2s, border-color .2s, color .2s; background:transparent; color:var(--dark); }
+    .filter-btn.active, .filter-btn:hover { background:var(--dark); color:#fff; border-color:var(--dark); }
+    .project-item { display:none; }
+    .project-item.visible { display:block; }
+    
+    /* Reveal overlay info more elegantly */
+    .bento-card.project-card .bento-overlay {
+      background: linear-gradient(to top, rgba(26,26,24,0.95) 0%, rgba(26,26,24,0.6) 40%, transparent 100%);
+      padding: 2rem;
+    }
+    .project-desc {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.4s ease, margin-top 0.4s ease;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .project-card:hover .project-desc {
+      max-height: 100px;
+      opacity: 1;
+      margin-top: 0.75rem;
+    }
+  </style>
+</head>
+<body class="bg-cream text-dark overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav id="main-nav" class="nav-glass fixed top-0 left-0 right-0 z-50 h-20 flex items-center px-6 md:px-10">
+    <div class="max-w-[1200px] mx-auto w-full flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-lg tracking-tight text-dark">
+        <i data-lucide="leaf" style="color:#166534;width:20px;height:20px;"></i> Terra's World
+      </a>
+      <div class="hidden md:flex items-center gap-2">
+        <a href="services.html" class="pill-nav">Services</a>
+        <a href="projects.html" class="pill-nav active">Projects</a>
+        <a href="about.html"    class="pill-nav">About</a>
+        <a href="blog.html"     class="pill-nav">Blog</a>
+        <a href="contact.html"  class="btn-cta ml-2">Start Project</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-dark"><i data-lucide="menu"></i></button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="hidden">
+    <a href="index.html">Home</a><a href="services.html">Services</a>
+    <a href="projects.html">Projects</a><a href="about.html">About</a>
+    <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10   py-12">
+    <div class="flex flex-col md:flex-row justify-between items-end gap-10">
+      <div class="reveal-up max-w-2xl">
+        <span class="section-label">Our Portfolio</span>
+        <h1 class="text-5xl md:text-6xl font-semibold tracking-tight leading-[1.1] mt-4 mb-6">
+          Environments that<br>feel like <span class="text-lime">magic.</span>
+        </h1>
+        <p class="text-lg text-dark/70 leading-relaxed">
+          Explore a curated selection of our finest horticultural work. From restoring barren farmlands into thriving organic ecosystems to designing minimalist Japanese Zen gardens in urban high-rises. 
+        </p>
+      </div>
+      
+      <!-- Key Stats Summary -->
+      <div class="flex gap-8 reveal-up shrink-0 border-l border-dark/10 pl-8">
+        <div>
+           <p class="text-3xl font-bold tracking-tight">400+</p>
+           <p class="text-sm font-medium text-dark/50 mt-1 uppercase tracking-wider">Completed</p>
+        </div>
+        <div>
+           <p class="text-3xl font-bold tracking-tight">28</p>
+           <p class="text-sm font-medium text-dark/50 mt-1 uppercase tracking-wider">Cities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED CASE STUDY BANNER -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10  reveal-up py-12">
+    <div class="relative w-full h-[500px] rounded-[24px] overflow-hidden group cursor-pointer" onclick="window.location.href='project-detail.html?id=featured'">
+      <img src="assets/indoor_arrangement.png" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="Featured Project">
+      <div class="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/30 to-transparent flex flex-col justify-end p-10 md:p-14">
+        <div class="flex flex-wrap items-center gap-3 mb-4">
+           <span class="bg-lime text-dark px-3 py-1 text-xs uppercase tracking-widest font-bold rounded-full">Featured Case Study</span>
+           <span class="text-white/80 text-sm font-medium">Commercial Hospitality</span>
+        </div>
+        <h2 class="text-4xl md:text-5xl font-semibold text-white mb-4">The Botanica Boutique Resort Re-wilding</h2>
+        <p class="text-white/70 max-w-2xl text-lg mb-6 line-clamp-2 md:line-clamp-none">We transformed an abandoned 2-acre concrete compound in Goa into a thriving tropical sanctuary, integrating over 1,200 native species and a self-sustaining natural pool system.</p>
+        <span class="inline-flex items-center gap-2 text-white font-medium hover:text-lime transition-colors">View full case study <i data-lucide="arrow-right" class="w-4 h-4"></i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER STRIP -->
+  <div class="max-w-[1200px] mx-auto px-6 md:px-10 sticky top-20 z-40 bg-cream/90 backdrop-blur-md py-4 mb-8 -mx-6 md:mx-auto border-y border-dark/5 reveal-up">
+    <div class="flex flex-nowrap overflow-x-auto no-scrollbar gap-2" id="filter-bar">
+      <button class="filter-btn shrink-0 active" data-filter="all">All Projects</button>
+      <button class="filter-btn shrink-0" data-filter="residential">Residential Homes</button>
+      <button class="filter-btn shrink-0" data-filter="commercial">Commercial & Hospitality</button>
+      <button class="filter-btn shrink-0" data-filter="farm">Farms & Estates</button>
+      <button class="filter-btn shrink-0" data-filter="indoor">Indoor Biophilia</button>
+      <button class="filter-btn shrink-0" data-filter="terrace">Terraces & Balconies</button>
+    </div>
+  </div>
+
+  <!-- BENTO PROJECT GRID -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10  py-12" id="project-grid">
+
+    <!-- Row A: 1 wide + 1 square -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-[14px] mb-[14px]">
+
+      <div class="project-item visible bento-card project-card md:col-span-3 h-[420px]" data-cat="residential">
+        <a href="project-detail.html?id=1" class="w-full h-full block relative">
+          <img src="assets/terrace_garden.png" alt="Green Haven Villa">
+          <div class="bento-overlay">
+            <span class="bento-tag bg-white/20 text-white backdrop-blur-md border-0">Residential</span>
+            <h3 class="bento-title text-2xl">Green Haven Villa</h3>
+            <p class="bento-sub text-white/50">South Mumbai · 2024</p>
+            <p class="project-desc">A complete landscape overhaul for a heritage villa, featuring drought-resistant native planting and a bespoke architectural water feature blending stone and rusted corten steel.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="project-item visible bento-card project-card md:col-span-2 h-[420px]" data-cat="indoor">
+        <a href="project-detail.html?id=2" class="w-full h-full block relative">
+          <img src="assets/hero_garden.png" alt="Curie Tech Campus">
+          <div class="bento-overlay">
+            <span class="bento-tag bg-white/20 text-white backdrop-blur-md border-0">Indoor</span>
+            <h3 class="bento-title text-2xl">Curie Tech Campus</h3>
+            <p class="bento-sub text-white/50">Bengaluru · 2024</p>
+            <p class="project-desc">Integration of 15-foot indoor Ficus trees and a three-story living wall to improve air quality and employee wellbeing in a 50,000 sq.ft office.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Row B: 3 equal -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-[14px] mb-[14px]">
+
+      <div class="project-item visible bento-card project-card h-[380px]" data-cat="terrace">
+        <a href="project-detail.html?id=3" class="w-full h-full block relative">
+          <img src="assets/office_plants.png" alt="Skyline Terrace">
+          <div class="bento-overlay">
+            <span class="bento-tag bg-white/20 text-white backdrop-blur-md border-0">Terrace & Balcony</span>
+            <h3 class="bento-title text-xl">Skyline Terrace Retreat</h3>
+            <p class="bento-sub text-white/50">Pune · 2025</p>
+            <p class="project-desc">Transforming an exposed, windy 12th-floor space utilizing heavy concrete planters and resilient coastal grass varieties.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="project-item visible bento-card project-card h-[380px]" data-cat="commercial">
+        <a href="project-detail.html?id=4" class="w-full h-full block relative">
+          <img src="assets/home_plants.png" alt="Botanica Hotel">
+          <div class="bento-overlay">
+            <span class="bento-tag bg-white/20 text-white backdrop-blur-md border-0">Commercial</span>
+            <h3 class="bento-title text-xl">Azure Golf Resort</h3>
+            <p class="bento-sub text-white/50">Goa · 2023</p>
+             <p class="project-desc">Minimalist edge-planting designed to compliment the harsh coastal terrain without restricting ocean views.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="project-item visible bento-card project-card h-[380px]" data-cat="farm">
+        <a href="project-detail.html?id=5" class="w-full h-full block relative">
+          <img src="assets/restaurant_plants.png" alt="Sunrise Farm">
+          <div class="bento-overlay">
+            <span class="bento-tag bg-white/20 text-white backdrop-blur-md border-0">Farm & Rural</span>
+            <h3 class="bento-title text-xl">Sunrise Organic Farm</h3>
+            <p class="bento-sub text-white/50">Nashik · 2024</p>
+             <p class="project-desc">A 5-acre permaculture design featuring companion planting, swales to capture rainwater, and high-yield orchard zones.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Row C: 1 square + 1 wide -->
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-[14px] mb-[14px]">
+
+      <div class="project-item visible bento-card project-card md:col-span-2 h-[420px]" data-cat="indoor">
+        <a href="project-detail.html?id=6" class="w-full h-full block relative">
+          <img src="assets/media_.png" alt="Living Wall Office">
+          <div class="bento-overlay">
+            <span class="bento-tag bg-white/20 text-white backdrop-blur-md border-0">Indoor</span>
+            <h3 class="bento-title text-2xl">The Botanical Lobby</h3>
+            <p class="bento-sub text-white/50">Delhi · 2025</p>
+            <p class="project-desc">An interior atrium flooded with skylight, utilizing massive Monstera Deliciosa and an automated drip-irrigation vertical wall installation.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="project-item visible bento-card project-card md:col-span-3 h-[420px]" data-cat="residential">
+        <a href="project-detail.html?id=7" class="w-full h-full block relative">
+          <img src="assets/indoor_arrangement.png" alt="Meadow Home">
+          <div class="bento-overlay">
+            <span class="bento-tag bg-white/20 text-white backdrop-blur-md border-0">Residential</span>
+            <h3 class="bento-title text-2xl">The Prairie Meadow House</h3>
+            <p class="bento-sub text-white/50">Hyderabad · 2025</p>
+             <p class="project-desc">Rejecting water-heavy traditional lawns in favor of a sprawling, wild-flower meadow look that attracts local pollinators and requires 70% less watering.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Row D: 2 equal -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-[14px]">
+
+      <div class="project-item visible bento-card project-card h-[380px]" data-cat="commercial">
+        <a href="project-detail.html?id=8" class="w-full h-full block relative">
+          <img src="assets/terrace_garden.png" alt="Zen Spa">
+          <div class="bento-overlay">
+            <span class="bento-tag bg-white/20 text-white backdrop-blur-md border-0">Commercial</span>
+            <h3 class="bento-title text-2xl">Zen Wellness Spa</h3>
+            <p class="bento-sub text-white/50">Chennai · 2023</p>
+            <p class="project-desc">Courtyard bamboo screens, raked gravel dry gardens, and moss terrains designed to invoke immediate psychological calm before spa treatments.</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="project-item visible bento-card project-card h-[380px]" data-cat="farm">
+        <a href="project-detail.html?id=9" class="w-full h-full block relative">
+          <img src="assets/hero_garden.png" alt="Herb Farm">
+          <div class="bento-overlay">
+            <span class="bento-tag bg-white/20 text-white backdrop-blur-md border-0">Farm & Rural</span>
+            <h3 class="bento-title text-2xl">Highland Herb Estate</h3>
+            <p class="bento-sub text-white/50">Coorg · 2024</p>
+            <p class="project-desc">Stepped terracing on a steep incline utilized to grow culinary and medicinal herbs organically, with a fully integrated solar-powered drip system.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10  py-12">
+      <div class="border-t border-dark/10 pt-16 flex flex-col md:flex-row items-center justify-between gap-8 reveal-up">
+        <div>
+           <h3 class="text-3xl font-semibold mb-2">Have a similar vision?</h3>
+           <p class="text-dark/60">We treat every new canvas with the same artistic rigor. Let's start the conversation.</p>
+        </div>
+        <a href="contact.html" class="btn-cta text-base px-8 py-4 whitespace-nowrap">Discuss your project</a>
+      </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white pt-20 pb-10 rounded-t-[32px] px-6 md:px-10 relative overflow-hidden">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/10 pb-12">
+        <div class="col-span-2">
+          <a href="index.html" class="flex items-center gap-2 font-semibold text-xl mb-3 text-white">
+            <i data-lucide="leaf" class="text-lime w-5 h-5"></i> Terra's World
+          </a>
+          <p class="text-white/50 text-sm max-w-xs">Crafting premium botanical ecosystems across every environment.</p>
+        </div>
+        <div>
+          <h5 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-5">Pages</h5>
+          <ul class="flex flex-col gap-2.5 text-sm text-white/70">
+            <li><a href="services.html" class="hover:text-lime transition-colors">Services</a></li>
+            <li><a href="projects.html" class="hover:text-lime transition-colors">Projects</a></li>
+            <li><a href="about.html"    class="hover:text-lime transition-colors">About</a></li>
+            <li><a href="blog.html"     class="hover:text-lime transition-colors">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-5">Contact</h5>
+          <ul class="flex flex-col gap-2.5 text-sm text-white/70">
+            <li>hello@terrasworld.com</li>
+            <li>+1 (234) 567-8900</li>
+            <li>124 Botanical Ave, NY</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-xs text-white/30 pt-8">© 2026 Terra's World. All rights reserved.</p>
+    </div>
+    <div class="footer-blob w-[600px] h-[600px] -bottom-1/2 -right-1/4"></div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="shared.js"></script>
+  <script>
+    // Filter logic
+    const filterBar = document.getElementById('filter-bar');
+    filterBar.addEventListener('click', e => {
+      const btn = e.target.closest('.filter-btn');
+      if (!btn) return;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      document.querySelectorAll('.project-item').forEach(item => {
+        const show = filter === 'all' || item.dataset.cat === filter;
+        item.classList.toggle('visible', show);
+        gsap.fromTo(item, { opacity: 0, y: 20 }, { opacity: show?1:0, y: 0, duration: .4, ease:'power2.out' });
+      });
+    });
+  </script>
+</body>
+</html>

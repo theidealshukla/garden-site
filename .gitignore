@@ -1,0 +1,16 @@
+# Python scripts used for migration
+*.py
+__pycache__/
+
+# Agent/IDE files
+.agent/
+.gemini/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (if any)
+node_modules/

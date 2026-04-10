@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact & Consultations | Terra's World</title>
+  <meta name="description" content="Start your landscaping project with Terra's World. Reach out for site-survey consultations, quotes, and partnership opportunities.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { cream:'#F5F3EF', dark:'#1A1A18', lime:'#C4F532', pastel:{ sage:'#D0DEC4', khaki:'#E9E4CE', blush:'#F3DADB', sky:'#C9E1E4' } }, fontFamily:{ sans:['DM Sans','sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-cream text-dark overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav id="main-nav" class="nav-glass fixed top-0 left-0 right-0 z-50 h-20 flex items-center px-6 md:px-10">
+    <div class="max-w-[1200px] mx-auto w-full flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-lg tracking-tight text-dark">
+        <i data-lucide="leaf" style="color:#166534;width:20px;height:20px;"></i> Terra's World
+      </a>
+      <div class="hidden md:flex items-center gap-2">
+        <a href="services.html" class="pill-nav">Services</a>
+        <a href="projects.html" class="pill-nav">Projects</a>
+        <a href="about.html"    class="pill-nav">About</a>
+        <a href="blog.html"     class="pill-nav">Blog</a>
+        <a href="contact.html"  class="btn-cta ml-2">Start Project</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-dark"><i data-lucide="menu"></i></button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="hidden">
+    <a href="index.html">Home</a><a href="services.html">Services</a>
+    <a href="projects.html">Projects</a><a href="about.html">About</a>
+    <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10   reveal-up py-12">
+    <span class="section-label">Consultations & Enquiries</span>
+    <h1 class="text-5xl md:text-7xl font-semibold tracking-tight leading-[1.05] mt-4 mb-6 max-w-3xl">
+      Let's build something<br><span class="text-lime">alive</span> together.
+    </h1>
+    <p class="section-sub max-w-2xl text-[1.1rem]">Whether you have a fully rendered architectural blueprint or just a bare patch of earth and a feeling — we're ready to listen. Every great ecosystem starts with a conversation.</p>
+  </section>
+
+  <!-- MAIN LAYOUT: Form + Info -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10  py-12">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-20">
+
+      <!-- Contact Form (3 cols) -->
+      <div class="lg:col-span-3 reveal-up">
+        
+        <div class="bg-white p-8 md:p-12 rounded-[32px] border border-dark/10 shadow-sm relative overflow-hidden">
+          <!-- decorative blur -->
+          <div class="absolute top-0 right-0 w-64 h-64 bg-pastel-khaki/30 rounded-full blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2"></div>
+          
+          <h2 class="text-2xl font-semibold mb-2">Project Brief</h2>
+          <p class="text-dark/60 text-sm mb-8">Fill out the details below. Our senior design team reviews every submission and will coordinate a 45-minute discovery call within one business day.</p>
+          
+          <form id="contact-form" class="flex flex-col gap-6" novalidate>
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div class="form-group">
+                <label class="form-label font-medium" for="first-name">First Name</label>
+                <input id="first-name" type="text" class="form-input bg-cream border-transparent focus:bg-white transition-colors" placeholder="Priya" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label font-medium" for="last-name">Last Name</label>
+                <input id="last-name" type="text" class="form-input bg-cream border-transparent focus:bg-white transition-colors" placeholder="Nair" required>
+              </div>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 gap-6">
+              <div class="form-group">
+                <label class="form-label font-medium" for="email">Email Address</label>
+                <input id="email" type="email" class="form-input bg-cream border-transparent focus:bg-white transition-colors" placeholder="you@example.com" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label font-medium" for="phone">Phone Number</label>
+                <input id="phone" type="tel" class="form-input bg-cream border-transparent focus:bg-white transition-colors" placeholder="+91 98765 43210" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label font-medium" for="service">Core Service Required</label>
+              <select id="service" class="form-select bg-cream border-transparent focus:bg-white transition-colors">
+                <option value="">Select an area of expertise...</option>
+                <option>Large Scale Farm / Estate Design</option>
+                <option>Residential Garden / Villa Landscape</option>
+                <option>High-Rise Terrace & Balcony</option>
+                <option>Commercial Hospitality / Resort</option>
+                <option>Indoor Corporate Biophilia / Living Walls</option>
+                <option>Landscape Architecture Consulting</option>
+                <option>Annual Maintenance Contract</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label font-medium" for="budget">Approximate CapEx Budget</label>
+              <select id="budget" class="form-select bg-cream border-transparent focus:bg-white transition-colors">
+                <option value="">Select a range...</option>
+                <option>Under ₹1 Lakh</option>
+                <option>₹1 Lakh – ₹5 Lakhs</option>
+                <option>₹5 Lakhs – ₹15 Lakhs</option>
+                <option>₹15 Lakhs – ₹50 Lakhs</option>
+                <option>₹50 Lakhs+</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label class="form-label font-medium" for="message">Space & Vision</label>
+              <textarea id="message" class="form-textarea bg-cream border-transparent focus:bg-white transition-colors" placeholder="Describe the physical dimensions of your space, the current condition, and what you hope to feel when you stand in it." rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="btn-cta self-start text-base px-8 py-4 mt-2">
+              Submit Brief
+              <span style="width:2rem;height:2rem;border-radius:50%;background:rgba(26,26,24,.15);display:flex;align-items:center;justify-content:center;">
+                <i data-lucide="arrow-up-right" style="width:16px;height:16px;"></i>
+              </span>
+            </button>
+            
+            <!-- Success message -->
+            <div id="form-success" class="hidden bg-pastel-sage rounded-[12px] p-5 text-dark font-medium text-sm border border-dark/10">
+              <i data-lucide="check-circle-2" class="inline-block w-5 h-5 mr-2 text-lime-700"></i>
+              Brief received successfully! Our architects will review this and email you to schedule a site discovery call.
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Info Sidebar (2 cols) -->
+      <div class="lg:col-span-2 flex flex-col gap-6 reveal-up">
+        
+        <!-- Contact info cards -->
+        <div class="bg-pastel-sky rounded-[24px] p-8 border border-dark/5">
+          <h3 class="text-xl font-semibold mb-6">HQ & Design Studio</h3>
+          
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="map-pin" class="w-5 h-5 text-dark"></i></div>
+            <div>
+              <h4 class="font-semibold text-sm mb-1 uppercase tracking-wider text-dark/50">Address</h4>
+              <p class="text-base text-dark font-medium leading-relaxed">124 Botanical Avenue,<br>Bandra West, Level 3<br>Mumbai, MH 400050</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="phone" class="w-5 h-5 text-dark"></i></div>
+            <div>
+              <h4 class="font-semibold text-sm mb-1 uppercase tracking-wider text-dark/50">Direct Line</h4>
+              <p class="text-base text-dark font-medium">+91 98765 43210</p>
+              <p class="text-xs text-dark/50 mt-1">Mon–Sat, 9am – 6pm IST</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm"><i data-lucide="mail" class="w-5 h-5 text-dark"></i></div>
+            <div>
+              <h4 class="font-semibold text-sm mb-1 uppercase tracking-wider text-dark/50">Email Contacts</h4>
+              <p class="text-base text-dark font-medium">hello@terrasworld.com</p>
+              <p class="text-sm text-dark font-medium mt-1">careers@terrasworld.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- What to expect -->
+        <div class="bg-white rounded-[24px] p-8 border border-dark/5 shadow-sm">
+          <h4 class="font-semibold text-lg mb-4">What happens next?</h4>
+          <ul class="space-y-4">
+             <li class="flex gap-3 items-start">
+               <span class="w-6 h-6 rounded-full bg-dark text-lime flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">1</span>
+               <p class="text-sm text-dark/70"><strong class="text-dark">Discovery:</strong> We review your brief and call you to assess scope constraints.</p>
+             </li>
+             <li class="flex gap-3 items-start">
+               <span class="w-6 h-6 rounded-full bg-dark text-lime flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">2</span>
+               <p class="text-sm text-dark/70"><strong class="text-dark">Site Visit:</strong> Our team physically maps the area, checking soil, wind, and drainage.</p>
+             </li>
+             <li class="flex gap-3 items-start">
+               <span class="w-6 h-6 rounded-full bg-dark text-lime flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">3</span>
+               <p class="text-sm text-dark/70"><strong class="text-dark">Proposal:</strong> You receive a high-level conceptual board and transparent cost breakdown.</p>
+             </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[800px] mx-auto px-6 md:px-10  border-t border-dark/10 py-12">
+      <div class="text-center mb-12 reveal-up">
+        <span class="section-label justify-center">Logistics</span>
+        <h2 class="section-heading mt-2">Before you book.</h2>
+      </div>
+      
+      <div class="flex flex-col gap-4 reveal-stagger" id="faq-list">
+
+        <div class="faq-item bg-white border border-dark/5 rounded-[14px] overflow-hidden cursor-pointer hover:border-dark/20 transition-all shadow-sm">
+          <button class="faq-q flex justify-between items-center w-full text-left p-6 font-semibold text-lg hover:text-lime-700 transition" onclick="toggleFaq(this)">
+            Do you charge for the initial site visit?
+            <i data-lucide="plus" style="width:20px;height:20px;flex-shrink:0;"></i>
+          </button>
+          <div class="faq-a hidden px-6 pb-6 text-base text-dark/70 leading-relaxed">
+            For properties within the Mumbai Metropolitan Region, the initial 45-minute site assessment is complimentary. For projects outside this zone or requiring extensive travel, we charge a nominal consulting fee which is fully deducted from the final project cost upon signing.
+          </div>
+        </div>
+
+        <div class="faq-item bg-white border border-dark/5 rounded-[14px] overflow-hidden cursor-pointer hover:border-dark/20 transition-all shadow-sm">
+          <button class="faq-q flex justify-between items-center w-full text-left p-6 font-semibold text-lg hover:text-lime-700 transition" onclick="toggleFaq(this)">
+            Can I buy plants from you directly without a design service?
+            <i data-lucide="plus" style="width:20px;height:20px;flex-shrink:0;"></i>
+          </button>
+          <div class="faq-a hidden px-6 pb-6 text-base text-dark/70 leading-relaxed">
+            Terra's World operates as a full-service landscape architecture studio, not a retail nursery. We only procure and supply botanical specimens for our contracted design and installation projects to ensure the highest quality control and survival rates.
+          </div>
+        </div>
+
+        <div class="faq-item bg-white border border-dark/5 rounded-[14px] overflow-hidden cursor-pointer hover:border-dark/20 transition-all shadow-sm">
+          <button class="faq-q flex justify-between items-center w-full text-left p-6 font-semibold text-lg hover:text-lime-700 transition" onclick="toggleFaq(this)">
+            Do you guarantee the survival of the plants you install?
+            <i data-lucide="plus" style="width:20px;height:20px;flex-shrink:0;"></i>
+          </button>
+          <div class="faq-a hidden px-6 pb-6 text-base text-dark/70 leading-relaxed">
+            Yes. We offer a standard 30-day establishment guarantee on all softscaping. If any specimen fails to acclimate within this period—provided irrigation systems were kept active—we replace it free of charge. Long-term guarantees are available with our Annual Maintenance Contracts.
+          </div>
+        </div>
+
+      </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white pt-20 pb-10 rounded-t-[32px] px-6 md:px-10 relative overflow-hidden">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/10 pb-12">
+        <div class="col-span-2">
+          <a href="index.html" class="flex items-center gap-2 font-semibold text-xl mb-3 text-white">
+            <i data-lucide="leaf" class="text-lime w-5 h-5"></i> Terra's World
+          </a>
+          <p class="text-white/50 text-sm max-w-xs">Crafting premium botanical ecosystems across every environment.</p>
+        </div>
+        <div>
+          <h5 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-5">Pages</h5>
+          <ul class="flex flex-col gap-2.5 text-sm text-white/70">
+            <li><a href="services.html" class="hover:text-lime transition-colors">Services</a></li>
+            <li><a href="projects.html" class="hover:text-lime transition-colors">Projects</a></li>
+            <li><a href="about.html"    class="hover:text-lime transition-colors">About</a></li>
+            <li><a href="blog.html"     class="hover:text-lime transition-colors">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-5">Contact</h5>
+          <ul class="flex flex-col gap-2.5 text-sm text-white/70">
+            <li>hello@terrasworld.com</li><li>+1 (234) 567-8900</li><li>124 Botanical Ave, NY</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-xs text-white/30 pt-8">© 2026 Terra's World. All rights reserved.</p>
+    </div>
+    <div class="footer-blob w-[600px] h-[600px] -bottom-1/2 -right-1/4"></div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="shared.js"></script>
+  <script>
+    // Form submission animation
+    const form = document.getElementById('contact-form');
+    const success = document.getElementById('form-success');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type=submit]');
+      gsap.to(btn, { scale: 0.97, duration: 0.1, yoyo: true, repeat: 1 });
+      setTimeout(() => {
+        success.classList.remove('hidden');
+        gsap.from(success, { y: 10, opacity: 0, duration: 0.4, ease: 'power2.out' });
+        // Optional: form.reset();
+      }, 400);
+    });
+
+    // FAQ toggle
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const isOpen = !answer.classList.contains('hidden');
+      
+      document.querySelectorAll('.faq-a').forEach(a => a.classList.add('hidden'));
+      document.querySelectorAll('.faq-q svg.lucide').forEach(i => { 
+            i.classList.remove('lucide-minus');
+            i.classList.add('lucide-plus');
+            i.innerHTML = '<path d="M5 12h14"/><path d="M12 5v14"/>';
+      });
+      
+      if (!isOpen) {
+        answer.classList.remove('hidden');
+        const svg = btn.querySelector('svg.lucide');
+        if(svg) {
+            svg.classList.remove('lucide-plus');
+            svg.classList.add('lucide-minus');
+            svg.innerHTML = '<path d="M5 12h14"/>';
+        }
+        gsap.from(answer, { height: 0, opacity: 0, duration: 0.3, ease: 'power2.out' });
+      }
+    }
+  </script>
+</body>
+</html>

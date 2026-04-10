@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Science of Biophilic Design | Terra's World Blog</title>
+  <meta name="description" content="Research shows biophilic office environments improve wellbeing by 15%. Here's what that means for how we design landscapes.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { cream:'#F5F3EF', dark:'#1A1A18', lime:'#C4F532', pastel:{ sage:'#D0DEC4', khaki:'#E9E4CE', blush:'#F3DADB', sky:'#C9E1E4' } }, fontFamily:{ sans:['DM Sans','sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .prose p     { color:rgba(26,26,24,.72); line-height:1.85; margin-bottom:1.5rem; font-size:.975rem; }
+    .prose h2    { font-size:1.65rem; font-weight:600; margin:2.5rem 0 1rem; letter-spacing:-.02em; }
+    .prose h3    { font-size:1.2rem; font-weight:600; margin:2rem 0 .75rem; }
+    .prose ul    { list-style:disc; padding-left:1.5rem; color:rgba(26,26,24,.7); font-size:.95rem; line-height:1.8; margin-bottom:1.5rem; }
+    .prose blockquote { border-left:3px solid var(--lime); padding-left:1.5rem; font-style:italic; color:rgba(26,26,24,.65); margin:2rem 0; }
+    .reading-progress { position:fixed; top:0; left:0; height:3px; background:var(--lime); z-index:100; transition:width .1s; }
+  </style>
+</head>
+<body class="bg-cream text-dark overflow-x-hidden">
+
+  <!-- Reading progress bar -->
+  <div class="reading-progress" id="reading-bar" style="width:0%"></div>
+
+  <!-- NAVBAR -->
+  <nav id="main-nav" class="nav-glass fixed top-0 left-0 right-0 z-50 h-20 flex items-center px-6 md:px-10 mt-[3px]">
+    <div class="max-w-[1200px] mx-auto w-full flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-lg tracking-tight text-dark">
+        <i data-lucide="leaf" style="color:#166534;width:20px;height:20px;"></i> Terra's World
+      </a>
+      <div class="hidden md:flex items-center gap-2">
+        <a href="services.html" class="pill-nav">Services</a>
+        <a href="projects.html" class="pill-nav">Projects</a>
+        <a href="about.html"    class="pill-nav">About</a>
+        <a href="blog.html"     class="pill-nav active">Blog</a>
+        <a href="contact.html"  class="btn-cta ml-2">Start Project</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-dark"><i data-lucide="menu"></i></button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="hidden">
+    <a href="index.html">Home</a><a href="services.html">Services</a>
+    <a href="projects.html">Projects</a><a href="about.html">About</a>
+    <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  </div>
+
+  <!-- HERO IMAGE -->
+  <div class="w-full h-[60vh] min-h-[380px] relative overflow-hidden mt-20">
+    <img src="assets/indoor_arrangement.png"
+         class="w-full h-full object-cover hero-bg" alt="Biophilic design">
+    <div class="absolute inset-0 bg-gradient-to-t from-cream via-cream/10 to-transparent"></div>
+  </div>
+
+  <!-- ARTICLE HEADER -->
+  <div class="max-w-[760px] mx-auto px-6 -mt-20 relative z-10 mb-12 reveal-up">
+    <span class="blog-tag">Feature</span>
+    <h1 class="text-3xl md:text-5xl font-semibold tracking-tight leading-tight mt-3 mb-5">
+      The Science of Biophilic Design: Why Nature Belongs Inside Every Building
+    </h1>
+    <div class="flex items-center gap-5 border-b border-dark/8 pb-8">
+      <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=80&h=80&auto=format&fit=crop&crop=faces"
+           class="w-11 h-11 rounded-full object-cover" alt="Priya Nair">
+      <div>
+        <p class="font-medium text-sm">Priya Nair</p>
+        <p class="text-xs text-dark/45">March 28, 2026 · 6 min read</p>
+      </div>
+      <div class="ml-auto flex items-center gap-3">
+        <a href="#" class="text-dark/40 hover:text-dark transition-colors"><i data-lucide="twitter" style="width:18px;height:18px;"></i></a>
+        <a href="#" class="text-dark/40 hover:text-dark transition-colors"><i data-lucide="linkedin" style="width:18px;height:18px;"></i></a>
+        <a href="#" class="text-dark/40 hover:text-dark transition-colors"><i data-lucide="link" style="width:18px;height:18px;"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ARTICLE BODY — Two-column layout with sidebar -->
+  <div class="max-w-[1100px] mx-auto px-6 md:px-10 flex gap-16 mb-24">
+
+    <!-- Left sticky sidebar (TOC) -->
+    <aside class="hidden lg:block w-[220px] shrink-0">
+      <div class="sticky top-28">
+        <p class="text-xs font-semibold uppercase tracking-wider text-dark/35 mb-4">In this article</p>
+        <nav class="flex flex-col gap-2.5 text-sm text-dark/50">
+          <a href="#why" class="hover:text-dark transition-colors">Why biophilia?</a>
+          <a href="#research" class="hover:text-dark transition-colors">The research</a>
+          <a href="#patterns" class="hover:text-dark transition-colors">Design patterns</a>
+          <a href="#limits" class="hover:text-dark transition-colors">Limitations</a>
+          <a href="#how" class="hover:text-dark transition-colors">How we apply it</a>
+        </nav>
+        <div class="mt-10 bg-pastel-sage rounded-[14px] p-5">
+          <p class="text-sm font-semibold mb-2">Interested in biophilic design for your space?</p>
+          <a href="contact.html" class="btn-cta text-xs py-2">Talk to us</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Article content -->
+    <article class="flex-1 max-w-[680px] prose reveal-up" id="article-content">
+
+      <p>Humans evolved in nature over hundreds of thousands of years. For the vast majority of our species' existence, we lived surrounded by trees, open skies, running water, and the sound of wind through leaves. The modern built environment — concrete offices, sealed glass towers, fluorescent-lit apartments — represents a radical departure from this evolutionary norm. And our bodies and minds are still catching up.</p>
+
+      <h2 id="why">Why biophilia matters</h2>
+      <p>Biophilia — literally "love of living systems" — is the term coined by E.O. Wilson to describe our innate emotional affiliation with other organisms. As a concept in architecture and design, it refers to the deliberate integration of natural elements into built environments: living plants, natural materials, water, daylight, and views to the outdoors.</p>
+      <p>The hypothesis is simple: if our brains evolved in nature, then exposure to natural elements should measurably reduce the cognitive strain we experience in artificial environments. And the science increasingly backs this intuition.</p>
+
+      <blockquote>
+        "People with more greenery outside their windows have lower levels of aggression, feel less stress, and recover faster from illness." — Frances Kuo, University of Illinois
+      </blockquote>
+
+      <h2 id="research">What the research shows</h2>
+      <p>Harvard's T.H. Chan School of Public Health published a landmark study in 2020 finding that employees in biophilic office environments score 15% higher on wellbeing measures and show 6% higher productivity ratings. The Terrapin Bright Green consultancy, in their seminal white paper "14 Patterns of Biophilic Design," documents how specific design interventions — from potted plants to living walls to fractal patterns in artwork — produce measurable physiological responses including reduced cortisol levels, lower blood pressure, and faster cognitive recovery after mental fatigue.</p>
+      <p>In healthcare contexts, the evidence is even more striking. A widely-cited 1984 study by Robert Ulrich found that post-surgical patients with window views of trees required significantly less pain medication and were discharged nearly a full day earlier than patients with views of a brick wall.</p>
+
+      <h2 id="patterns">Core biophilic design patterns</h2>
+      <p>Terrapin's framework identifies 14 discrete patterns of biophilic design, grouped into three categories:</p>
+
+      <ul>
+        <li><strong>Nature in the Space</strong> — Direct presence of plants, water, animals, and natural materials</li>
+        <li><strong>Natural Analogues</strong> — Organic forms, biomimicry, natural patterns in materials and artwork</li>
+        <li><strong>Nature of the Space</strong> — Spatial configurations that evoke evolutionary refugia: prospect, refuge, mystery, risk/peril</li>
+      </ul>
+
+      <p>In our practice at Terra's World, we work primarily with the first category — direct nature integration through plant selection, living walls, water features, and the strategic use of natural materials (timber, stone, rattan). But we consciously apply principles from all three categories in our spatial arrangements.</p>
+
+      <h2 id="limits">Limitations and nuance</h2>
+      <p>It would be naive to suggest that a few potted palms can transform a dysfunctional workplace culture or compensate for systemic wellbeing issues. The research is encouraging but context-dependent. A single specimen plant in a 500-person open-plan office produces no measurable effect. Biophilic design works at density — when nature is sufficiently integrated to create genuine sensory richness, variety, and dynamism.</p>
+
+      <blockquote>
+        "It's not enough to add a plant to a desk. Nature must be woven into the fundamental spatial experience of a building." — Priya Nair, Terra's World
+      </blockquote>
+
+      <h2 id="how">How we apply biophilic principles at Terra's World</h2>
+      <p>Every client brief we receive is evaluated through a biophilic lens, regardless of project scale. For a 200 sqft apartment balcony, we might deploy density through tiered vertical planters, aromatic herbs within arm's reach, and the deliberate selection of species with varied textures and movement (ornamental grasses, trailing plants). For a 10,000 sqft commercial atrium, we work with structural engineers to create a genuine indoor forest — with mature specimen trees, varied understorey planting, and water elements that produce ambient sound.</p>
+      <p>The key principle is always authenticity. Fake plants, printed nature murals, and synthetic grass produce none of the biophilic benefits. Living systems — even modest ones — do.</p>
+
+    </article>
+  </div>
+
+  <!-- RELATED POSTS -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10  py-12">
+    <h3 class="text-2xl font-semibold mb-8 reveal-up">More from the Journal</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 reveal-stagger">
+      <a href="blog-post.html" class="blog-card">
+        <div class="overflow-hidden"><img src="assets/terrace_garden.png" class="blog-card-img" alt="Terrace"></div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Design Tips</span>
+          <h4 class="blog-card-title">10 Rules for Designing a Terrace Garden in India</h4>
+          <p class="blog-card-meta mt-3">5 min read</p>
+        </div>
+      </a>
+      <a href="blog-post.html" class="blog-card">
+        <div class="overflow-hidden"><img src="assets/hero_garden.png" class="blog-card-img" alt="Indoor"></div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Plant Care</span>
+          <h4 class="blog-card-title">7 Best Indoor Plants for Low-Light Apartments</h4>
+          <p class="blog-card-meta mt-3">4 min read</p>
+        </div>
+      </a>
+      <a href="blog-post.html" class="blog-card">
+        <div class="overflow-hidden"><img src="assets/office_plants.png" class="blog-card-img" alt="Living Wall"></div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Design Tips</span>
+          <h4 class="blog-card-title">Living Walls 101: Everything Before Installation</h4>
+          <p class="blog-card-meta mt-3">8 min read</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white pt-20 pb-10 rounded-t-[32px] px-6 md:px-10 relative overflow-hidden">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/10 pb-12">
+        <div class="col-span-2">
+          <a href="index.html" class="flex items-center gap-2 font-semibold text-xl mb-3 text-white">
+            <i data-lucide="leaf" class="text-lime w-5 h-5"></i> Terra's World
+          </a>
+          <p class="text-white/50 text-sm max-w-xs">Crafting premium botanical ecosystems across every environment.</p>
+        </div>
+        <div>
+          <h5 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-5">Pages</h5>
+          <ul class="flex flex-col gap-2.5 text-sm text-white/70">
+            <li><a href="services.html" class="hover:text-lime transition-colors">Services</a></li>
+            <li><a href="projects.html" class="hover:text-lime transition-colors">Projects</a></li>
+            <li><a href="about.html"    class="hover:text-lime transition-colors">About</a></li>
+            <li><a href="blog.html"     class="hover:text-lime transition-colors">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-5">Contact</h5>
+          <ul class="flex flex-col gap-2.5 text-sm text-white/70">
+            <li>hello@terrasworld.com</li><li>+1 (234) 567-8900</li><li>124 Botanical Ave, NY</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-xs text-white/30 pt-8">© 2026 Terra's World. All rights reserved.</p>
+    </div>
+    <div class="footer-blob w-[600px] h-[600px] -bottom-1/2 -right-1/4"></div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="shared.js"></script>
+  <script>
+    // Reading progress
+    const bar = document.getElementById('reading-bar');
+    const article = document.getElementById('article-content');
+    window.addEventListener('scroll', () => {
+      const rect = article.getBoundingClientRect();
+      const total = article.offsetHeight;
+      const scrolled = -rect.top + window.innerHeight * 0.5;
+      bar.style.width = Math.max(0, Math.min(100, (scrolled / total) * 100)) + '%';
+    });
+    // Hero parallax
+    gsap.to('.hero-bg', {
+      y: 100, ease: 'none',
+      scrollTrigger: { trigger: '.hero-bg', start: 'top top', end: 'bottom top', scrub: true }
+    });
+  </script>
+</body>
+</html>

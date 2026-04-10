@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gulzaar | Botanical & Landscaping Services</title>
+    <!-- Tailwind CSS (CDN for quick dev) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F5F3EF',
+                        dark: '#1A1A18',
+                        lime: '#C4F532',
+                        pastel: {
+                            sage: '#D0DEC4',
+                            khaki: '#E9E4CE',
+                            blush: '#F3DADB',
+                            sky: '#C9E1E4'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        heading: ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-cream text-dark font-sans antialiased overflow-x-hidden selection:bg-lime selection:text-dark">
+
+    <!-- ═══════════════════════════════════════════════════
+         NAVBAR — glass on hero, minimal solid after scroll
+         ═══════════════════════════════════════════════════ -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 pointer-events-none" data-state="hero">
+        <!-- Glass capsule (visible on hero) -->
+        <div id="nav-inner"
+            class="max-w-[1200px] mx-auto mt-5 mx-4 md:mx-auto flex items-center justify-between rounded-full px-6 py-3.5 pointer-events-auto transition-all duration-500 bg-dark/30 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+            <a href="index.html" id="nav-logo"
+                class="flex items-center gap-2 font-semibold text-lg text-white z-50 relative transition-colors duration-500">
+                <i data-lucide="leaf" class="text-lime w-5 h-5"></i>
+                <span class="tracking-tight">Terra's World</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8" id="nav-links">
+                <a href="services.html"
+                    class="nav-link text-white/90 hover:text-lime transition-colors text-sm font-medium">Services</a>
+                <a href="projects.html"
+                    class="nav-link text-white/90 hover:text-lime transition-colors text-sm font-medium">Projects</a>
+                <a href="about.html"
+                    class="nav-link text-white/90 hover:text-lime transition-colors text-sm font-medium">About</a>
+                <a href="blog.html"
+                    class="nav-link text-white/90 hover:text-lime transition-colors text-sm font-medium">Blog</a>
+                <a href="contact.html" id="nav-cta"
+                    class="bg-lime text-dark px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-white transition-colors duration-200 ml-2">Start
+                    Project</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white transition-colors duration-500"><i
+                    data-lucide="menu"></i></button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO — Full-bleed cinematic, 100svh
+         ═══════════════════════════════════════════════════ -->
+    <section id="hero" class="relative w-full h-[100svh] flex flex-col justify-end overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="assets/hero_garden.png" alt="Lush green monstera leaves"
+                class="hero-bg w-full h-full object-cover">
+        </div>
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 z-10 bg-gradient-to-b from-dark/50 via-dark/20 to-dark/80"></div>
+
+        <!-- Content -->
+        <div
+            class="relative z-20 w-full max-w-[1200px] mx-auto px-6 md:px-10 pb-[8vh] flex flex-col justify-end h-full">
+            <div class="hero-text max-w-2xl z-30 mb-8 md:mb-12">
+                <h1
+                    class="text-white text-5xl md:text-6xl lg:text-[72px] font-semibold leading-[1.05] mb-6 tracking-tight drop-shadow-lg">
+                    Beautiful ecosystems crafted for your environment.
+                </h1>
+                <p
+                    class="text-white/90 text-base md:text-lg leading-[1.6] max-w-[500px] mb-8 font-medium drop-shadow-md">
+                    We design, build, and maintain premium botanical landscapes that transform your spaces into vibrant
+                    natural retreats.
+                </p>
+                <button
+                    class="bg-white text-dark px-7 py-4 rounded-full font-semibold text-lg inline-flex items-center gap-3 hover:bg-lime transition-colors duration-300 shadow-2xl group">
+                    Explore services
+                    <span
+                        class="w-8 h-8 rounded-full bg-dark text-white flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                    </span>
+                </button>
+            </div>
+
+            <!-- Bottom massive title (Parallax) -->
+            <div class="absolute bottom-4 left-6 md:left-10 pointer-events-none z-20">
+                <h2
+                    class="hero-title-large text-lime text-[14vw] font-bold tracking-tighter opacity-90 mix-blend-screen leading-[0.8] drop-shadow-2xl">
+                    Terra's world
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         INTRODUCTION & USE CASES
+         ═══════════════════════════════════════════════════ -->
+    <section id="use-cases"
+        class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10 py-20">
+        <div class="max-w-4xl mb-12 reveal-up">
+            <h2 class="text-3xl md:text-5xl font-semibold mb-6 tracking-tight leading-tight">Stunning gardens.
+                Breathtaking layouts. Designed with precision, crafted by experts.</h2>
+            <p class="text-lg md:text-xl text-dark/70 leading-relaxed font-medium">We're passionate about bringing your
+                story to life through sustainable, meticulously designed gardens and expert landscape architecture. This
+                is landscaping, wildly reimagined.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 reveal-up" style="transition-delay: 200ms">
+            <div class="use-case-card relative rounded-[12px] overflow-hidden group h-[200px] md:h-[240px]">
+                <img src="assets/office_plants.png"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt="Office">
+                <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                    <span class="text-xs font-medium text-dark">For office</span>
+                </div>
+            </div>
+            <div class="use-case-card relative rounded-[12px] overflow-hidden group h-[200px] md:h-[240px]">
+                <img src="assets/home_plants.png"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt="Home">
+                <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                    <span class="text-xs font-medium text-dark">For home</span>
+                </div>
+            </div>
+            <div class="use-case-card relative rounded-[12px] overflow-hidden group h-[200px] md:h-[240px]">
+                <img src="assets/restaurant_plants.png"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt="Restaurant">
+                <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                    <span class="text-xs font-medium text-dark">For restaurant</span>
+                </div>
+            </div>
+            <div class="use-case-card relative rounded-[12px] overflow-hidden group h-[200px] md:h-[240px]">
+                <img src="assets/office_plants.png"
+                    class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt="Outdoor">
+                <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                    <span class="text-xs font-medium text-dark">For any space</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         MARQUEE STRIP
+         ═══════════════════════════════════════════════════ -->
+    <div class="marquee-wrap py-6 border-y border-dark/5 bg-cream/50 hidden md:block overflow-hidden">
+        <div class="marquee-track">
+            <span class="text-xl md:text-2xl font-medium text-dark/70 uppercase tracking-widest whitespace-nowrap">Captivating ecosystems</span>
+            <span class="text-lime text-xl md:text-2xl">⊗</span>
+            <span class="text-xl md:text-2xl font-medium text-dark/70 uppercase tracking-widest whitespace-nowrap">Peaceful retreats</span>
+            <span class="text-lime text-xl md:text-2xl">⊗</span>
+            <span class="text-xl md:text-2xl font-medium text-dark/70 uppercase tracking-widest whitespace-nowrap">Botanical mastery</span>
+            <span class="text-lime text-xl md:text-2xl">⊗</span>
+            <span class="text-xl md:text-2xl font-medium text-dark/70 uppercase tracking-widest whitespace-nowrap">Sustainable design</span>
+            <span class="text-lime text-xl md:text-2xl">⊗</span>
+            <!-- Duplicate for seamless loop -->
+            <span class="text-xl md:text-2xl font-medium text-dark/70 uppercase tracking-widest whitespace-nowrap">Captivating ecosystems</span>
+            <span class="text-lime text-xl md:text-2xl">⊗</span>
+            <span class="text-xl md:text-2xl font-medium text-dark/70 uppercase tracking-widest whitespace-nowrap">Peaceful retreats</span>
+            <span class="text-lime text-xl md:text-2xl">⊗</span>
+            <span class="text-xl md:text-2xl font-medium text-dark/70 uppercase tracking-widest whitespace-nowrap">Botanical mastery</span>
+            <span class="text-lime text-xl md:text-2xl">⊗</span>
+            <span class="text-xl md:text-2xl font-medium text-dark/70 uppercase tracking-widest whitespace-nowrap">Sustainable design</span>
+            <span class="text-lime text-xl md:text-2xl">⊗</span>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         WHY CHOOSE US — 2 Column Features
+         ═══════════════════════════════════════════════════ -->
+    <section id="features"
+        class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10 py-20">
+        <div class="flex flex-col lg:flex-row gap-16 lg:gap-8 justify-between">
+            <div class="w-full lg:w-5/12 reveal-up">
+                <h2 class="text-4xl md:text-[48px] font-semibold text-dark leading-[1.1] tracking-tight">
+                    Why our service is the perfect solution?
+                </h2>
+            </div>
+            <div class="w-full lg:w-6/12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div
+                        class="feature-card bg-pastel-sage rounded-[14px] p-6 text-dark hover:scale-[1.02] transition-transform duration-300">
+                        <h3 class="text-base font-semibold mb-2">Expert Designers</h3>
+                        <p class="text-sm opacity-80 leading-relaxed">Our landscape architects have decades of
+                            experience blending nature with structure. Customized plans blending rustic charm with
+                            modern comfort.</p>
+                    </div>
+                    <div
+                        class="feature-card bg-pastel-khaki rounded-[14px] p-6 text-dark hover:scale-[1.02] transition-transform duration-300">
+                        <h3 class="text-base font-semibold mb-2">Sustainable Practices</h3>
+                        <p class="text-sm opacity-80 leading-relaxed">Eco-friendly solutions and native plant selections
+                            ensuring beautiful, healthy lawns year-round and contributing to a thriving local ecosystem.
+                        </p>
+                    </div>
+                    <div
+                        class="feature-card bg-pastel-blush rounded-[14px] p-6 text-dark hover:scale-[1.02] transition-transform duration-300">
+                        <h3 class="text-base font-semibold mb-2">Holistic Care</h3>
+                        <p class="text-sm opacity-80 leading-relaxed">Regular upkeep schedules expertly tailored to your
+                            garden to keep your landscape looking breathtaking from season to season.</p>
+                    </div>
+                    <div
+                        class="feature-card bg-pastel-sky rounded-[14px] p-6 text-dark hover:scale-[1.02] transition-transform duration-300">
+                        <h3 class="text-base font-semibold mb-2">Premium Sourcing</h3>
+                        <p class="text-sm opacity-80 leading-relaxed">Scrupulous attention to detail from soil
+                            preparation and turf selection to intricate hardscaping and architectural plant placement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         BENEFITS — Parallax Section
+         ═══════════════════════════════════════════════════ -->
+    <section id="benefits"
+        class="relative w-full min-h-[100svh] flex flex-col justify-center overflow-hidden py-12 md:my-16 rounded-none md:rounded-[32px] max-w-[1400px] mx-auto">
+        <div class="absolute inset-0">
+            <img src="assets/hero_garden.png" class="benefits-bg w-full h-[120%] object-cover -mt-[10%]"
+                alt="Forest canopy">
+        </div>
+        <div class="absolute inset-0 bg-dark/60"></div>
+
+        <div class="absolute bottom-0 w-full p-8 md:p-16 max-w-[1200px] left-1/2 -translate-x-1/2">
+            <h2 class="text-white text-3xl font-semibold mb-10 reveal-up">Air-purifying Benefits</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="reveal-up" style="transition-delay: 100ms">
+                    <i data-lucide="wind" class="text-lime w-6 h-6 mb-4"></i>
+                    <h3 class="text-white font-medium mb-2 text-lg">Breathe Easy</h3>
+                    <p class="text-white/70 text-sm">Our plant selections are specifically curated to filter toxins and
+                        improve air quality naturally.</p>
+                </div>
+                <div class="reveal-up" style="transition-delay: 200ms">
+                    <i data-lucide="droplet" class="text-lime w-6 h-6 mb-4"></i>
+                    <h3 class="text-white font-medium mb-2 text-lg">Humidity Control</h3>
+                    <p class="text-white/70 text-sm">Dense indoor planting naturally regulates indoor humidity for
+                        maximum human comfort.</p>
+                </div>
+                <div class="reveal-up" style="transition-delay: 300ms">
+                    <i data-lucide="sun" class="text-lime w-6 h-6 mb-4"></i>
+                    <h3 class="text-white font-medium mb-2 text-lg">Mental Well-being</h3>
+                    <p class="text-white/70 text-sm">Biophilic design is clinically proven to reduce stress, boost
+                        focus, and elevate daily mood.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         SERVICES BENTO GRID
+         ═══════════════════════════════════════════════════ -->
+    <section id="services-grid"
+        class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10 py-20">
+        <div class="text-center mb-16 reveal-up">
+            <h2 class="text-4xl font-semibold text-dark tracking-tight mb-4">Our Core Services</h2>
+            <p class="text-dark/60 max-w-lg mx-auto text-lg pt-2">We design, create and maintain breathtaking landscapes
+                meticulously tailored to your lifestyle.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Balcony & Terrace -->
+            <div
+                class="group relative rounded-[24px] overflow-hidden bg-white shadow-sm border border-dark/5 p-6 md:col-span-2 min-h-[320px] flex flex-col justify-end reveal-up">
+                <div class="absolute inset-0 bg-dark/20 z-10 group-hover:bg-dark/40 transition-colors duration-500">
+                </div>
+                <img src="assets/terrace_garden.png"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt="Balcony Garden">
+                <div class="relative z-20">
+                    <span
+                        class="inline-block px-3 py-1 bg-lime text-dark text-xs font-semibold rounded-full mb-3 shadow">Popular
+                        Setup</span>
+                    <h3 class="text-white text-3xl font-semibold mb-2 drop-shadow-sm">Balcony & Terrace</h3>
+                    <p class="text-white/90 text-[15px] max-w-md mb-5 drop-shadow">Connect with nature in even the
+                        smallest urban living spaces with targeted layered layouts designed for relaxation and
+                        entertaining.</p>
+                    <a href="services.html"
+                        class="inline-flex items-center gap-2 text-white font-medium text-sm hover:text-lime transition-colors">Explore
+                        More <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+
+            <!-- Farmhouse -->
+            <div class="group relative rounded-[24px] overflow-hidden bg-white shadow-sm border border-dark/5 p-6 min-h-[320px] flex flex-col justify-end reveal-up"
+                style="transition-delay: 100ms">
+                <div class="absolute inset-0 bg-dark/20 z-10 group-hover:bg-dark/40 transition-colors duration-500">
+                </div>
+                <img src="assets/hero_garden.png"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt="Farmhouse Design">
+                <div class="relative z-20">
+                    <h3 class="text-white text-2xl font-semibold mb-2 drop-shadow-sm">Farmhouse Layouts</h3>
+                    <p class="text-white/90 text-sm mb-4 drop-shadow">Transform your estate with expansive layouts
+                        blending rustic charm with elegant modern design.</p>
+                    <a href="services.html"
+                        class="inline-flex items-center gap-2 text-white/90 hover:text-lime transition-colors text-sm font-medium">Get
+                        Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+
+            <!-- Indoor Plants -->
+            <div
+                class="group relative rounded-[24px] overflow-hidden bg-white shadow-sm border border-dark/5 p-6 min-h-[320px] flex flex-col justify-end reveal-up">
+                <div class="absolute inset-0 bg-dark/20 z-10 group-hover:bg-dark/40 transition-colors duration-500">
+                </div>
+                <img src="assets/home_plants.png"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt="Indoor Plants">
+                <div class="relative z-20">
+                    <h3 class="text-white text-2xl font-semibold mb-2 drop-shadow-sm">Indoor Biophilics</h3>
+                    <p class="text-white/90 text-sm mb-4 drop-shadow">Bring life indoors with carefully selected
+                        purifiers that thrive in your unique environment.</p>
+                    <a href="services.html"
+                        class="inline-flex items-center gap-2 text-white/90 hover:text-lime transition-colors text-sm font-medium">Get
+                        Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+
+            <!-- Hardscaping -->
+            <div class="group relative rounded-[24px] overflow-hidden bg-white shadow-sm border border-dark/5 p-6 md:col-span-2 min-h-[320px] flex flex-col justify-end reveal-up"
+                style="transition-delay: 100ms">
+                <div class="absolute inset-0 bg-dark/20 z-10 group-hover:bg-dark/40 transition-colors duration-500">
+                </div>
+                <img src="assets/office_plants.png"
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    alt="Hardscaping">
+                <div class="relative z-20">
+                    <h3 class="text-white text-3xl font-semibold mb-2 drop-shadow-sm">Architecture & Hardscaping</h3>
+                    <p class="text-white/90 text-[15px] max-w-md mb-5 drop-shadow">Elegant stone pathways, retaining
+                        walls, organic water features, and comprehensive physical landscape structuring built to last a
+                        lifetime.</p>
+                    <a href="services.html"
+                        class="inline-flex items-center gap-2 text-white font-medium text-sm hover:text-lime transition-colors">Get
+                        Quote <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         OUR PROCESS — Steps Section
+         ═══════════════════════════════════════════════════ -->
+    <section id="process"
+        class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10 py-20">
+        <div class="text-center mb-16 reveal-up">
+            <span class="section-label">How It Works</span>
+            <h2 class="text-4xl md:text-5xl font-semibold text-dark tracking-tight mb-4">From Vision to Reality</h2>
+            <p class="text-dark/60 max-w-xl mx-auto text-lg">Our proven 4-step process ensures every project is
+                delivered on time with breathtaking results.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-stagger">
+            <!-- Step 1 -->
+            <div
+                class="relative bg-white rounded-[20px] p-8 border border-dark/5 group hover:border-lime/50 transition-all duration-300 hover:shadow-lg">
+                <div
+                    class="w-12 h-12 rounded-full bg-lime/20 flex items-center justify-center mb-6 group-hover:bg-lime transition-colors duration-300">
+                    <span class="text-lg font-bold text-dark">01</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-dark">Consultation</h3>
+                <p class="text-sm text-dark/60 leading-relaxed">We visit your space, understand your vision, analyse
+                    soil conditions, sunlight patterns, and discuss your lifestyle needs.</p>
+                <div class="absolute top-8 right-8">
+                    <i data-lucide="message-circle" class="w-5 h-5 text-dark/10 group-hover:text-lime transition-colors duration-300"></i>
+                </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div
+                class="relative bg-white rounded-[20px] p-8 border border-dark/5 group hover:border-lime/50 transition-all duration-300 hover:shadow-lg">
+                <div
+                    class="w-12 h-12 rounded-full bg-lime/20 flex items-center justify-center mb-6 group-hover:bg-lime transition-colors duration-300">
+                    <span class="text-lg font-bold text-dark">02</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-dark">Design & Plan</h3>
+                <p class="text-sm text-dark/60 leading-relaxed">Our architects create detailed 3D layouts, plant
+                    palettes, hardscape blueprints, and material specifications tailored to your aesthetic.</p>
+                <div class="absolute top-8 right-8">
+                    <i data-lucide="pencil-ruler" class="w-5 h-5 text-dark/10 group-hover:text-lime transition-colors duration-300"></i>
+                </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div
+                class="relative bg-white rounded-[20px] p-8 border border-dark/5 group hover:border-lime/50 transition-all duration-300 hover:shadow-lg">
+                <div
+                    class="w-12 h-12 rounded-full bg-lime/20 flex items-center justify-center mb-6 group-hover:bg-lime transition-colors duration-300">
+                    <span class="text-lg font-bold text-dark">03</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-dark">Build & Install</h3>
+                <p class="text-sm text-dark/60 leading-relaxed">Our expert crew executes with precision — from soil
+                    prep and irrigation to planting, hardscaping, and lighting installation.</p>
+                <div class="absolute top-8 right-8">
+                    <i data-lucide="hammer" class="w-5 h-5 text-dark/10 group-hover:text-lime transition-colors duration-300"></i>
+                </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div
+                class="relative bg-white rounded-[20px] p-8 border border-dark/5 group hover:border-lime/50 transition-all duration-300 hover:shadow-lg">
+                <div
+                    class="w-12 h-12 rounded-full bg-lime/20 flex items-center justify-center mb-6 group-hover:bg-lime transition-colors duration-300">
+                    <span class="text-lg font-bold text-dark">04</span>
+                </div>
+                <h3 class="text-xl font-semibold mb-3 text-dark">Maintain & Thrive</h3>
+                <p class="text-sm text-dark/60 leading-relaxed">Year-round garden care including pruning, fertilising,
+                    pest control, seasonal rotations, and health monitoring to keep it thriving.</p>
+                <div class="absolute top-8 right-8">
+                    <i data-lucide="sparkles" class="w-5 h-5 text-dark/10 group-hover:text-lime transition-colors duration-300"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         TESTIMONIALS — Animated Carousel
+         ═══════════════════════════════════════════════════ -->
+    <section id="testimonials"
+        class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10 py-20 overflow-hidden">
+        <div class="text-center mb-12 reveal-up">
+            <span class="section-label">Testimonials</span>
+            <h2 class="text-3xl md:text-5xl font-semibold text-dark tracking-tight mb-4">Our Happy Customers Say It
+                Best</h2>
+            <p class="text-dark/60 max-w-xl mx-auto text-lg">Every landscape tells a unique story. Here's what our
+                clients have to say.</p>
+        </div>
+
+        <div class="flex flex-col md:flex-row gap-8 items-center reveal-up" style="transition-delay: 200ms">
+            <!-- Testimonial Card Area -->
+            <div class="relative w-full md:flex-1 h-[340px] md:h-[300px]">
+                <!-- Quote icon -->
+                <div class="absolute -top-4 -left-4 z-10 opacity-20">
+                    <svg class="w-12 h-12 text-lime" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983z" />
+                    </svg>
+                </div>
+
+                <!-- Cards (stacked, one visible at a time) -->
+                <div id="testimonial-cards">
+                    <!-- Card 1 -->
+                    <div class="testimonial-slide absolute inset-0 bg-white rounded-[20px] p-8 md:p-10 border border-dark/5 shadow-lg transition-all duration-500 opacity-100 translate-x-0"
+                        data-index="0">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-14 h-14 rounded-full bg-pastel-sage flex items-center justify-center text-xl font-bold text-dark overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop"
+                                        class="w-full h-full object-cover" alt="Priya S."
+                                        onerror="this.style.display='none';this.parentElement.textContent='PS'">
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-dark text-lg">Priya S.</h4>
+                                    <p class="text-sm text-dark/50">Balcony Garden Client</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-0.5">
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-dark/10 mb-6"></div>
+                        <p class="text-dark/80 italic text-base leading-relaxed">"They transformed our balcony into a lush oasis.
+                            Their meticulous attention to detail and sustainable practices are truly unmatched! Every morning
+                            feels like waking up in a private garden."</p>
+                        <p class="mt-6 text-xs text-dark/40 text-right">Verified Customer</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="testimonial-slide absolute inset-0 bg-white rounded-[20px] p-8 md:p-10 border border-dark/5 shadow-lg transition-all duration-500 opacity-0 translate-x-[100px] pointer-events-none"
+                        data-index="1">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-14 h-14 rounded-full bg-pastel-khaki flex items-center justify-center text-xl font-bold text-dark overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
+                                        class="w-full h-full object-cover" alt="Rahul M."
+                                        onerror="this.style.display='none';this.parentElement.textContent='RM'">
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-dark text-lg">Rahul M.</h4>
+                                    <p class="text-sm text-dark/50">Farmhouse Design Client</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-0.5">
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-dark/10 mb-6"></div>
+                        <p class="text-dark/80 italic text-base leading-relaxed">"Our farmhouse garden feels like a private
+                            sanctuary now. The team expertly blended rustic charm with modern comfort. Truly breathtaking
+                            landscapes that inspire everyone who visits."</p>
+                        <p class="mt-6 text-xs text-dark/40 text-right">Verified Customer</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="testimonial-slide absolute inset-0 bg-white rounded-[20px] p-8 md:p-10 border border-dark/5 shadow-lg transition-all duration-500 opacity-0 translate-x-[100px] pointer-events-none"
+                        data-index="2">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-14 h-14 rounded-full bg-pastel-blush flex items-center justify-center text-xl font-bold text-dark overflow-hidden">
+                                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&auto=format&fit=crop"
+                                        class="w-full h-full object-cover" alt="Elena R."
+                                        onerror="this.style.display='none';this.parentElement.textContent='ER'">
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-dark text-lg">Elena R.</h4>
+                                    <p class="text-sm text-dark/50">Restaurant Patio Client</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-0.5">
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                                <i data-lucide="star" class="w-4 h-4 text-yellow-500 fill-yellow-500"></i>
+                            </div>
+                        </div>
+                        <div class="w-full h-px bg-dark/10 mb-6"></div>
+                        <p class="text-dark/80 italic text-base leading-relaxed">"Their aesthetic eye is unmatched. The patio
+                            garden they created for us draws customers in just for the ambiance. Highly professional and
+                            detail-oriented from start to finish."</p>
+                        <p class="mt-6 text-xs text-dark/40 text-right">Verified Customer</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Controls -->
+            <div class="flex md:flex-col gap-4 items-center justify-center">
+                <button id="testimonial-prev"
+                    class="w-10 h-10 rounded-full border border-dark/15 flex items-center justify-center hover:bg-dark hover:text-white transition-all duration-200"
+                    aria-label="Previous testimonial">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                </button>
+
+                <div class="flex md:flex-col gap-2 items-center" id="testimonial-dots">
+                    <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-dark transition-colors" data-dot="0"
+                        aria-label="Go to testimonial 1"></button>
+                    <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-dark/20 transition-colors" data-dot="1"
+                        aria-label="Go to testimonial 2"></button>
+                    <button class="testimonial-dot w-2.5 h-2.5 rounded-full bg-dark/20 transition-colors" data-dot="2"
+                        aria-label="Go to testimonial 3"></button>
+                </div>
+
+                <button id="testimonial-next"
+                    class="w-10 h-10 rounded-full border border-dark/15 flex items-center justify-center hover:bg-dark hover:text-white transition-all duration-200"
+                    aria-label="Next testimonial">
+                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FINAL CTA
+         ═══════════════════════════════════════════════════ -->
+    <section id="cta"
+        class="min-h-[60svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10 py-24 text-center">
+        <div class="bg-pastel-sage/30 rounded-[32px] py-16 px-6 md:px-12 border border-dark/5 reveal-up">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-semibold mb-6 tracking-tight text-dark">Ready for a Garden
+                Makeover?</h2>
+            <p class="text-lg text-dark/70 max-w-2xl mx-auto mb-10 font-medium">Book your free consultation today and
+                let us engineer a beautiful ecosystem tailored specifically to your lifestyle and distinct aesthetic
+                vision.</p>
+            <a href="contact.html"
+                class="bg-dark text-white px-8 py-4 rounded-full font-medium text-lg inline-flex items-center gap-3 hover:bg-lime hover:text-dark transition-colors duration-300 mx-auto shadow-xl">
+                Get a Free Estimate
+                <span class="w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center">
+                    <i data-lucide="arrow-right" class="w-4 h-4 flex-shrink-0"></i>
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════ -->
+    <footer class="bg-dark text-white pt-24 pb-12 rounded-t-[32px] mt-16 px-6 md:px-10 overflow-hidden relative">
+        <div class="max-w-[1200px] mx-auto relative z-10">
+            <!-- Top massive text -->
+            <div class="mb-20 text-center md:text-left">
+                <h2 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter opacity-90 reveal-up text-cream">
+                    Bringing ecosystems
+                    <br><span class="text-lime">to your space.</span>
+                </h2>
+            </div>
+
+            <!-- Columns -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mt-12 border-t border-white/10 pt-12 reveal-up">
+                <div class="col-span-1 md:col-span-2">
+                    <a href="#" class="flex items-center gap-2 font-semibold text-2xl mb-4">
+                        <i data-lucide="leaf" class="text-lime w-6 h-6"></i>
+                        Gulzaar
+                    </a>
+                    <p class="text-white/60 text-sm max-w-sm mb-6">Elevating indoor and outdoor environments through
+                        sophisticated botanical architecture and holistic plant care.</p>
+                    <button
+                        class="bg-lime text-dark px-6 py-3 rounded-full text-sm font-semibold hover:bg-white transition-colors duration-200">
+                        Book a Consultation
+                    </button>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold mb-6 uppercase tracking-wider text-white/40">Quick Links</h4>
+                    <ul class="flex flex-col gap-3 text-sm text-white/80">
+                        <li><a href="#" class="hover:text-lime transition-colors">Our Services</a></li>
+                        <li><a href="#" class="hover:text-lime transition-colors">Projects Gallery</a></li>
+                        <li><a href="#" class="hover:text-lime transition-colors">About the Team</a></li>
+                        <li><a href="#" class="hover:text-lime transition-colors">Plant Care Guide</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-sm font-semibold mb-6 uppercase tracking-wider text-white/40">Contact</h4>
+                    <ul class="flex flex-col gap-3 text-sm text-white/80">
+                        <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4 text-white/40"></i>
+                            124 Botanical Ave, NY</li>
+                        <li class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-white/40"></i> +1
+                            (234) 567-8900</li>
+                        <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-white/40"></i>
+                            hello@terrasworld.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Legal -->
+            <div
+                class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-white/40">
+                <p>&copy; 2026 Gulzaar. All rights reserved.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Abstract BG Decoration -->
+        <div
+            class="absolute -bottom-1/2 -right-1/4 w-[800px] h-[800px] bg-lime/10 blur-[120px] rounded-full z-0 pointer-events-none">
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="shared.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

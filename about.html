@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Terra's World</title>
+  <meta name="description" content="Learn about Terra's World, a studio of landscape architects and horticulturalists dedicated to elevating human-nature connection.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: { colors: { cream:'#F5F3EF', dark:'#1A1A18', lime:'#C4F532', pastel:{ sage:'#D0DEC4', khaki:'#E9E4CE', blush:'#F3DADB', sky:'#C9E1E4' } }, fontFamily:{ sans:['DM Sans','sans-serif'] } } }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-cream text-dark overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav id="main-nav" class="nav-glass fixed top-0 left-0 right-0 z-50 h-20 flex items-center px-6 md:px-10">
+    <div class="max-w-[1200px] mx-auto w-full flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-2 font-semibold text-lg tracking-tight text-dark">
+        <i data-lucide="leaf" style="color:#166534;width:20px;height:20px;"></i> Terra's World
+      </a>
+      <div class="hidden md:flex items-center gap-2">
+        <a href="services.html" class="pill-nav">Services</a>
+        <a href="projects.html" class="pill-nav">Projects</a>
+        <a href="about.html"    class="pill-nav active">About</a>
+        <a href="blog.html"     class="pill-nav">Blog</a>
+        <a href="contact.html"  class="btn-cta ml-2">Start Project</a>
+      </div>
+      <button id="menu-btn" class="md:hidden text-dark"><i data-lucide="menu"></i></button>
+    </div>
+  </nav>
+  <div id="mobile-menu" class="hidden">
+    <a href="index.html">Home</a><a href="services.html">Services</a>
+    <a href="projects.html">Projects</a><a href="about.html">About</a>
+    <a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  </div>
+
+  <!-- PAGE HERO -->
+  <section class="min-h-[100svh] flex flex-col justify-center page-hero   bg-cream py-12">
+    <div class="page-hero-inner text-center max-w-[900px] mx-auto px-6">
+      <div class="reveal-up">
+        <span class="section-label justify-center">The Studio</span>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] my-6">
+          Cultivating life<br>in the concrete age.
+        </h1>
+        <p class="text-lg md:text-xl text-dark/65 max-w-2xl mx-auto leading-relaxed">
+          Terra's World is a multi-disciplinary landscape architecture and horticulture studio. We bridge the gap between human environments and wild ecologies, designing spaces that heal both the planet and the people inhabiting them.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE BANNER & STATS -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10  reveal-up py-12">
+    <div class="relative w-full h-[500px] rounded-[32px] overflow-hidden mb-12">
+      <img src="assets/hero_garden.png" class="w-full h-full object-cover" alt="The Studio Team">
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-dark/10 border-t border-b border-dark/10 py-10">
+      <div class="text-center px-4">
+        <p class="text-5xl font-bold mb-2">12</p>
+        <p class="text-sm text-dark/50 uppercase tracking-widest font-semibold">Years Active</p>
+      </div>
+      <div class="text-center px-4">
+        <p class="text-5xl font-bold mb-2">400<span class="text-lime">+</span></p>
+        <p class="text-sm text-dark/50 uppercase tracking-widest font-semibold">Ecosystems Built</p>
+      </div>
+      <div class="text-center px-4">
+        <p class="text-5xl font-bold mb-2">18</p>
+        <p class="text-sm text-dark/50 uppercase tracking-widest font-semibold">Expert Staff</p>
+      </div>
+      <div class="text-center px-4">
+        <p class="text-5xl font-bold mb-2">1.2<span class="text-sm">M</span></p>
+        <p class="text-sm text-dark/50 uppercase tracking-widest font-semibold">Sq.Ft Greened</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR STORY -->
+  <section class="min-h-[100svh] flex flex-col justify-center bg-white  border-y border-dark/5 py-12">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-10">
+      <div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <!-- Story text -->
+        <div class="reveal-up">
+          <span class="section-label">Origin Story</span>
+          <h2 class="section-heading mt-2 mb-6">Born from a simple realization: cities were suffocating.</h2>
+          <div class="space-y-5 text-dark/70 leading-relaxed text-[1.05rem]">
+            <p>
+              In 2014, our founder Dr. Rohan Mehta noticed a disturbing trend in rapid urban development. Modern architecture was pushing nature entirely out of the blueprint, relegating "landscaping" to an afterthought of chemical-heavy, unsustainable lawns.
+            </p>
+            <p>
+              Terra's World started as a small consultancy aimed at re-introducing native, indigenous plant species back into urban balconies and terraces. We didn't want to just sell potted plants; we wanted to establish micro-ecosystems that attracted pollinators and managed water efficiently.
+            </p>
+            <p>
+              Today, our studio comprises structural engineers, soil scientists, botanists, and master designers. We tackle everything from hyper-dense commercial living walls that purify office air, to sprawling 10-acre farmhouse permaculture master plans.
+            </p>
+          </div>
+        </div>
+        <!-- Story image -->
+        <div class="relative reveal-up">
+          <!-- Decorative backing -->
+          <div class="absolute -top-6 -left-6 w-full h-full bg-pastel-sage rounded-[24px] -z-10"></div>
+          <img src="assets/office_plants.png" class="w-full h-auto rounded-[24px] object-cover" alt="Garden design process">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES / PHILOSOPHY -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10  py-12">
+    <div class="text-center md:max-w-xl mx-auto mb-16 reveal-up">
+      <span class="section-label justify-center">Philosophy</span>
+      <h2 class="section-heading mt-2">The principles that root us.</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-[14px]">
+      
+      <!-- Value 1 -->
+      <div class="bg-dark text-white rounded-[24px] p-10 flex flex-col justify-between reveal-stagger min-h-[320px]">
+        <div>
+          <i data-lucide="droplets" class="w-10 h-10 text-lime mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4 text-white">Ecological First</h3>
+          <p class="text-white/60 leading-relaxed">
+            Beautiful design cannot come at the cost of the environment. We strictly source non-invasive species, optimize for extremely low water consumption through xeriscaping, and employ 100% organic soil remediation.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Value 2 -->
+      <div class="bg-pastel-sky rounded-[24px] p-10 flex flex-col justify-between reveal-stagger min-h-[320px]">
+        <div>
+          <i data-lucide="leaf" class="w-10 h-10 text-dark mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4 text-dark">Native Vitality</h3>
+          <p class="text-dark/70 leading-relaxed">
+            We prioritize indigenous flora that is genetically predisposed to thrive in local soil and climate conditions. This drastically reduces the need for synthetic fertilizers and intensive maintenance interventions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Value 3 -->
+      <div class="bg-pastel-blush rounded-[24px] p-10 flex flex-col justify-between reveal-stagger min-h-[320px]">
+        <div>
+          <i data-lucide="sun" class="w-10 h-10 text-dark mb-6"></i>
+          <h3 class="text-2xl font-semibold mb-4 text-dark">Human Biophilia</h3>
+          <p class="text-dark/70 leading-relaxed">
+            We believe that human beings have an innate, biological need to connect with nature. Our spaces are designed not just to be looked at, but to be inhabited, felt, smelled, and touched to lower cortisol levels.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THE TEAM -->
+  <section class="min-h-[100svh] flex flex-col justify-center bg-white  rounded-t-[40px] px-6 md:px-10 border-t border-dark/5 py-12">
+    <div class="max-w-[1200px] mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6 reveal-up">
+        <div>
+          <span class="section-label">Leadership</span>
+          <h2 class="section-heading mt-2">Meet the minds behind the soil.</h2>
+        </div>
+        <p class="text-dark/60 max-w-sm md:text-right text-sm">
+          A rare blend of structural engineers, horticulturalists, botanists, and landscape architects working in perfect synergy.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 reveal-stagger">
+        <!-- Team 1 -->
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-[20px] mb-4 h-[300px] bg-cream">
+            <img src="assets/home_plants.png" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" alt="Dr. Rohan Mehta">
+          </div>
+          <h3 class="text-lg font-semibold">Dr. Rohan Mehta</h3>
+          <p class="text-lime-700 text-sm font-medium mb-2">Founder & Principal Architect</p>
+          <p class="text-xs text-dark/60 leading-relaxed">PhD in Urban Ecology. Rohan oversees master planning for all commercial and large-scale agricultural projects.</p>
+        </div>
+
+        <!-- Team 2 -->
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-[20px] mb-4 h-[300px] bg-cream">
+            <img src="assets/restaurant_plants.png" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" alt="Priya Nair">
+          </div>
+          <h3 class="text-lg font-semibold">Priya Nair</h3>
+          <p class="text-lime-700 text-sm font-medium mb-2">Head of Horticulture</p>
+          <p class="text-xs text-dark/60 leading-relaxed">With 10+ years at national botanical gardens, she curates the specific plant palettes and soil biology for every site.</p>
+        </div>
+
+        <!-- Team 3 -->
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-[20px] mb-4 h-[300px] bg-cream">
+            <img src="assets/media_.png" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" alt="Arjun Patel">
+          </div>
+          <h3 class="text-lg font-semibold">Arjun Patel</h3>
+          <p class="text-lime-700 text-sm font-medium mb-2">Lead Install Engineer</p>
+          <p class="text-xs text-dark/60 leading-relaxed">Master of hardscaping and fluid dynamics. Arjun ensures that retaining walls hold and irrigation systems flow flawlessly.</p>
+        </div>
+
+        <!-- Team 4 -->
+        <div class="group cursor-pointer">
+          <div class="overflow-hidden rounded-[20px] mb-4 h-[300px] bg-cream">
+            <img src="assets/indoor_arrangement.png" class="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105" alt="Lea Santos">
+          </div>
+          <h3 class="text-lg font-semibold">Lea Santos</h3>
+          <p class="text-lime-700 text-sm font-medium mb-2">Interior Biophilia Director</p>
+          <p class="text-xs text-dark/60 leading-relaxed">Specializing in indoor lighting conditions and living walls, Lea transforms stark corporate offices into breathing jungles.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="min-h-[100svh] flex flex-col justify-center max-w-[1200px] mx-auto px-6 md:px-10   py-12">
+    <div class="bg-pastel-sage rounded-[32px] p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-10 reveal-up">
+      <div class="max-w-lg">
+        <h2 class="text-3xl md:text-4xl font-semibold text-dark mb-4 tracking-tight">Looking for a partner on your next project?</h2>
+        <p class="text-dark/70">Whether you are an architectural firm needing landscape consulting, or a homeowner with a bare balcony, our team is ready.</p>
+      </div>
+      <a href="contact.html" class="btn-cta text-base px-8 py-4 shrink-0 shadow-lg">Work with us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white pt-20 pb-10 rounded-t-[32px] px-6 md:px-10 relative overflow-hidden">
+    <div class="max-w-[1200px] mx-auto relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/10 pb-12">
+        <div class="col-span-2">
+          <a href="index.html" class="flex items-center gap-2 font-semibold text-xl mb-3 text-white">
+            <i data-lucide="leaf" class="text-lime w-5 h-5"></i> Terra's World
+          </a>
+          <p class="text-white/50 text-sm max-w-xs">Crafting premium botanical ecosystems across every environment.</p>
+        </div>
+        <div>
+          <h5 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-5">Pages</h5>
+          <ul class="flex flex-col gap-2.5 text-sm text-white/70">
+            <li><a href="services.html" class="hover:text-lime transition-colors">Services</a></li>
+            <li><a href="projects.html" class="hover:text-lime transition-colors">Projects</a></li>
+            <li><a href="about.html"    class="hover:text-lime transition-colors">About</a></li>
+            <li><a href="blog.html"     class="hover:text-lime transition-colors">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5 class="text-xs font-semibold uppercase tracking-wider text-white/30 mb-5">Contact</h5>
+          <ul class="flex flex-col gap-2.5 text-sm text-white/70">
+            <li>hello@terrasworld.com</li><li>+1 (234) 567-8900</li><li>124 Botanical Ave, NY</li>
+          </ul>
+        </div>
+      </div>
+      <p class="text-xs text-white/30 pt-8">© 2026 Terra's World. All rights reserved.</p>
+    </div>
+    <div class="footer-blob w-[600px] h-[600px] -bottom-1/2 -right-1/4"></div>
+  </footer>
+
+  <script src="https://unpkg.com/lenis@1.1.2/dist/lenis.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="shared.js"></script>
+</body>
+</html>
