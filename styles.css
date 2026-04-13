@@ -1,5 +1,5 @@
 /* =====================================================
-   Terra's World — Global Design System
+   gulzaaar — Global Design System
    ===================================================== */
 
 /* --- Google Fonts import handled in HTML <head> --- */
@@ -79,6 +79,46 @@ html.lenis { height: auto; }
   display: inline-flex; align-items: center; gap: .5rem;
 }
 .btn-cta:hover { background: var(--dark); color: #fff; transform: translateY(-2px); }
+
+/* ── Navbar Notch Behavior ──────────────────────────── */
+#nav-inner {
+  transition: max-width 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              padding 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              background-color 0.4s ease, 
+              border-color 0.4s ease, 
+              box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+#nav-links {
+  transition: max-width 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.4s ease, 
+              gap 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  max-width: 800px; /* large enough for full nav */
+}
+
+/* Base states: solid (scrolled) & hero (top) managed by data-state */
+@media (min-width: 768px) {
+  /* When in solid state AND not hovered -> Notch Mode */
+  #navbar[data-state="solid"]:not(:hover) #nav-inner {
+    max-width: 220px; /* Compact width just for the logo */
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    justify-content: center;
+  }
+
+  /* Hide the links entirely in Notch Mode */
+  #navbar[data-state="solid"]:not(:hover) #nav-links {
+    max-width: 0 !important;
+    opacity: 0 !important;
+    gap: 0 !important;
+    pointer-events: none;
+    margin-left: 0 !important;
+  }
+}
 
 /* ── Hero (page-level) ──────────────────────────────── */
 .page-hero {

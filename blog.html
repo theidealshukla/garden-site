@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Journal | Terra's World</title>
-  <meta name="description" content="Horticultural insights, landscaping tips, and design stories from the Terra's World studio.">
+  <title>Journal | gulzaaar</title>
+  <meta name="description" content="Horticultural insights, landscaping tips, and design stories from the gulzaaar studio.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -22,21 +22,34 @@
 <body class="bg-cream text-dark overflow-x-hidden">
 
   <!-- NAVBAR -->
-  <nav id="main-nav" class="nav-glass fixed top-0 left-0 right-0 z-50 h-20 flex items-center px-6 md:px-10">
-    <div class="max-w-[1200px] mx-auto w-full flex justify-between items-center">
-      <a href="index.html" class="flex items-center gap-2 font-semibold text-lg tracking-tight text-dark">
-        <i data-lucide="leaf" style="color:#166534;width:20px;height:20px;"></i> Terra's World
-      </a>
-      <div class="hidden md:flex items-center gap-2">
-        <a href="services.html" class="pill-nav">Services</a>
-        <a href="projects.html" class="pill-nav">Projects</a>
-        <a href="about.html"    class="pill-nav">About</a>
-        <a href="blog.html"     class="pill-nav active">Blog</a>
-        <a href="contact.html"  class="btn-cta ml-2">Start Project</a>
-      </div>
-      <button id="menu-btn" class="md:hidden text-dark"><i data-lucide="menu"></i></button>
-    </div>
-  </nav>
+      <!-- ═══════════════════════════════════════════════════
+         NAVBAR — glass on hero, minimal solid after scroll
+         ═══════════════════════════════════════════════════ -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 pointer-events-none" data-state="hero">
+        <!-- Glass capsule (visible on hero) -->
+        <div id="nav-inner"
+            class="max-w-[1200px] mx-auto mt-5 mx-4 md:mx-auto flex items-center justify-between rounded-full px-6 py-3.5 pointer-events-auto transition-all duration-500 bg-dark/30 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+            <a href="index.html" id="nav-logo"
+                class="flex items-center gap-2 font-semibold text-lg text-white z-50 relative transition-colors duration-500">
+                <i data-lucide="leaf" class="text-lime w-5 h-5"></i>
+                <span class="tracking-tight">gulzaaar</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8" id="nav-links">
+                <a href="services.html"
+                    class="nav-link text-white/90 hover:text-lime transition-colors text-sm font-medium">Services</a>
+                <a href="projects.html"
+                    class="nav-link text-white/90 hover:text-lime transition-colors text-sm font-medium">Projects</a>
+                <a href="about.html"
+                    class="nav-link text-white/90 hover:text-lime transition-colors text-sm font-medium">About</a>
+                <a href="blog.html"
+                    class="nav-link text-white/90 hover:text-lime transition-colors text-sm font-medium">Blog</a>
+                <a href="contact.html" id="nav-cta"
+                    class="bg-lime text-dark px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-white transition-colors duration-200 ml-2">Start Project</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white transition-colors duration-500"><i
+                    data-lucide="menu"></i></button>
+        </div>
+    </nav>
   <div id="mobile-menu" class="hidden">
     <a href="index.html">Home</a><a href="services.html">Services</a>
     <a href="projects.html">Projects</a><a href="about.html">About</a>
@@ -199,7 +212,7 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/10 pb-12">
         <div class="col-span-2">
           <a href="index.html" class="flex items-center gap-2 font-semibold text-xl mb-3 text-white">
-            <i data-lucide="leaf" class="text-lime w-5 h-5"></i> Terra's World
+            <i data-lucide="leaf" class="text-lime w-5 h-5"></i> gulzaaar
           </a>
           <p class="text-white/50 text-sm max-w-xs">Crafting premium botanical ecosystems across every environment.</p>
         </div>
@@ -221,7 +234,7 @@
           </ul>
         </div>
       </div>
-      <p class="text-xs text-white/30 pt-8">© 2026 Terra's World. All rights reserved.</p>
+      <p class="text-xs text-white/30 pt-8">© 2026 gulzaaar. All rights reserved.</p>
     </div>
     <div class="footer-blob w-[600px] h-[600px] -bottom-1/2 -right-1/4"></div>
   </footer>

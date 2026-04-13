@@ -1,0 +1,24 @@
+{
+  "name": "gardening-site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theidealshukla/garden-site.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/theidealshukla/garden-site/issues"
+  },
+  "homepage": "https://github.com/theidealshukla/garden-site#readme",
+  "dependencies": {
+    "simple-parallax-js": "^6.3.3"
+  }
+}

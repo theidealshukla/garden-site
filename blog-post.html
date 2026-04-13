@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Science of Biophilic Design | Terra's World Blog</title>
+  <title>The Science of Biophilic Design | gulzaaar Blog</title>
   <meta name="description" content="Research shows biophilic office environments improve wellbeing by 15%. Here's what that means for how we design landscapes.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -29,21 +29,34 @@
   <div class="reading-progress" id="reading-bar" style="width:0%"></div>
 
   <!-- NAVBAR -->
-  <nav id="main-nav" class="nav-glass fixed top-0 left-0 right-0 z-50 h-20 flex items-center px-6 md:px-10 mt-[3px]">
-    <div class="max-w-[1200px] mx-auto w-full flex justify-between items-center">
-      <a href="index.html" class="flex items-center gap-2 font-semibold text-lg tracking-tight text-dark">
-        <i data-lucide="leaf" style="color:#166534;width:20px;height:20px;"></i> Terra's World
-      </a>
-      <div class="hidden md:flex items-center gap-2">
-        <a href="services.html" class="pill-nav">Services</a>
-        <a href="projects.html" class="pill-nav">Projects</a>
-        <a href="about.html"    class="pill-nav">About</a>
-        <a href="blog.html"     class="pill-nav active">Blog</a>
-        <a href="contact.html"  class="btn-cta ml-2">Start Project</a>
-      </div>
-      <button id="menu-btn" class="md:hidden text-dark"><i data-lucide="menu"></i></button>
-    </div>
-  </nav>
+      <!-- ═══════════════════════════════════════════════════
+         NAVBAR — glass on hero, minimal solid after scroll
+         ═══════════════════════════════════════════════════ -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 pointer-events-none" data-state="hero">
+        <!-- Glass capsule (visible on hero) -->
+        <div id="nav-inner"
+            class="max-w-[1200px] mx-auto mt-5 mx-4 md:mx-auto flex items-center justify-between rounded-full px-6 py-3.5 pointer-events-auto transition-all duration-500 bg-dark/30 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.12)]">
+            <a href="index.html" id="nav-logo"
+                class="flex items-center gap-2 font-semibold text-lg text-white z-50 relative transition-colors duration-500">
+                <i data-lucide="leaf" class="text-lime w-5 h-5"></i>
+                <span class="tracking-tight">gulzaaar</span>
+            </a>
+            <div class="hidden md:flex items-center gap-8" id="nav-links">
+                <a href="services.html"
+                    class="nav-link text-white/90 hover:text-lime transition-colors text-sm font-medium">Services</a>
+                <a href="projects.html"
+                    class="nav-link text-white/90 hover:text-lime transition-colors text-sm font-medium">Projects</a>
+                <a href="about.html"
+                    class="nav-link text-white/90 hover:text-lime transition-colors text-sm font-medium">About</a>
+                <a href="blog.html"
+                    class="nav-link text-white/90 hover:text-lime transition-colors text-sm font-medium">Blog</a>
+                <a href="contact.html" id="nav-cta"
+                    class="bg-lime text-dark px-6 py-2.5 rounded-full text-sm font-semibold hover:bg-white transition-colors duration-200 ml-2">Start Project</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white transition-colors duration-500"><i
+                    data-lucide="menu"></i></button>
+        </div>
+    </nav>
   <div id="mobile-menu" class="hidden">
     <a href="index.html">Home</a><a href="services.html">Services</a>
     <a href="projects.html">Projects</a><a href="about.html">About</a>
@@ -125,16 +138,16 @@
         <li><strong>Nature of the Space</strong> — Spatial configurations that evoke evolutionary refugia: prospect, refuge, mystery, risk/peril</li>
       </ul>
 
-      <p>In our practice at Terra's World, we work primarily with the first category — direct nature integration through plant selection, living walls, water features, and the strategic use of natural materials (timber, stone, rattan). But we consciously apply principles from all three categories in our spatial arrangements.</p>
+      <p>In our practice at gulzaaar, we work primarily with the first category — direct nature integration through plant selection, living walls, water features, and the strategic use of natural materials (timber, stone, rattan). But we consciously apply principles from all three categories in our spatial arrangements.</p>
 
       <h2 id="limits">Limitations and nuance</h2>
       <p>It would be naive to suggest that a few potted palms can transform a dysfunctional workplace culture or compensate for systemic wellbeing issues. The research is encouraging but context-dependent. A single specimen plant in a 500-person open-plan office produces no measurable effect. Biophilic design works at density — when nature is sufficiently integrated to create genuine sensory richness, variety, and dynamism.</p>
 
       <blockquote>
-        "It's not enough to add a plant to a desk. Nature must be woven into the fundamental spatial experience of a building." — Priya Nair, Terra's World
+        "It's not enough to add a plant to a desk. Nature must be woven into the fundamental spatial experience of a building." — Priya Nair, gulzaaar
       </blockquote>
 
-      <h2 id="how">How we apply biophilic principles at Terra's World</h2>
+      <h2 id="how">How we apply biophilic principles at gulzaaar</h2>
       <p>Every client brief we receive is evaluated through a biophilic lens, regardless of project scale. For a 200 sqft apartment balcony, we might deploy density through tiered vertical planters, aromatic herbs within arm's reach, and the deliberate selection of species with varied textures and movement (ornamental grasses, trailing plants). For a 10,000 sqft commercial atrium, we work with structural engineers to create a genuine indoor forest — with mature specimen trees, varied understorey planting, and water elements that produce ambient sound.</p>
       <p>The key principle is always authenticity. Fake plants, printed nature murals, and synthetic grass produce none of the biophilic benefits. Living systems — even modest ones — do.</p>
 
@@ -178,7 +191,7 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-white/10 pb-12">
         <div class="col-span-2">
           <a href="index.html" class="flex items-center gap-2 font-semibold text-xl mb-3 text-white">
-            <i data-lucide="leaf" class="text-lime w-5 h-5"></i> Terra's World
+            <i data-lucide="leaf" class="text-lime w-5 h-5"></i> gulzaaar
           </a>
           <p class="text-white/50 text-sm max-w-xs">Crafting premium botanical ecosystems across every environment.</p>
         </div>
@@ -198,7 +211,7 @@
           </ul>
         </div>
       </div>
-      <p class="text-xs text-white/30 pt-8">© 2026 Terra's World. All rights reserved.</p>
+      <p class="text-xs text-white/30 pt-8">© 2026 gulzaaar. All rights reserved.</p>
     </div>
     <div class="footer-blob w-[600px] h-[600px] -bottom-1/2 -right-1/4"></div>
   </footer>

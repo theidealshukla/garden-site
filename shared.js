@@ -107,18 +107,21 @@ if (menuBtn && mobileMenu) {
 // ── 6. Universal reveal-up ───────────────────────────────
 gsap.utils.toArray('.reveal-up').forEach(el => {
   gsap.fromTo(el,
-    { y: 48, autoAlpha: 0 },
+    { y: 60, autoAlpha: 0, scale: 0.96, filter: 'blur(8px)' },
     {
-      y: 0, autoAlpha: 1, duration: 0.85, ease: 'power2.out',
-      scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none reverse' }
+      y: 0, autoAlpha: 1, scale: 1, filter: 'blur(0px)', duration: 1.2, ease: 'power3.out',
+      scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' }
     }
   );
 });
 
 // ── 7. Staggered children ────────────────────────────────
 gsap.utils.toArray('.reveal-stagger').forEach(parent => {
-  gsap.from(parent.children, {
-    y: 40, opacity: 0, duration: 0.7, stagger: 0.1, ease: 'power2.out',
-    scrollTrigger: { trigger: parent, start: 'top 85%' }
-  });
+  gsap.fromTo(parent.children,
+    { y: 50, autoAlpha: 0, scale: 0.95, filter: 'blur(5px)' },
+    {
+      y: 0, autoAlpha: 1, scale: 1, filter: 'blur(0px)', duration: 1, stagger: 0.12, ease: 'power3.out',
+      scrollTrigger: { trigger: parent, start: 'top 85%', toggleActions: 'play none none reverse' }
+    }
+  );
 });

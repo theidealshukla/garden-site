@@ -1,4 +1,4 @@
-### Website Design & Structure Analysis: Terra's World
+### Website Design & Structure Analysis: gulzaaar
 
 This document outlines the layout, design system, and animations of the provided website video, structured for AI recreation.
 
@@ -16,7 +16,7 @@ This document outlines the layout, design system, and animations of the provided
 
 **A. Navbar & Hero Section**
 * **Navbar:** Fixed top. Left: Logo. Right: Lime green "Cart (0)" button and Hamburger menu icon.
-* **Hero Layout:** Full viewport height. Center: 3D rendered bonsai/tree graphic. Left/Right: Small descriptive text blocks. Bottom: Oversized lime green title ("Terra's world") overlapping the central graphic.
+* **Hero Layout:** Full viewport height. Center: 3D rendered bonsai/tree graphic. Left/Right: Small descriptive text blocks. Bottom: Oversized lime green title ("gulzaaar") overlapping the central graphic.
 * **Animation:** Parallax scroll. The large title scrolls up faster than the background image.
 
 **B. Intro & Marquee Section**
